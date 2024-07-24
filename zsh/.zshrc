@@ -138,3 +138,7 @@ alias mongo="mongod --dbpath ~/data/db"
 alias ls="eza --icons --color=always"
 
 eval $(thefuck --alias)
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
