@@ -33,22 +33,22 @@ error_symbol = "[➜](bold 130)"
 [cmd_duration]
 min_time = 0
 show_milliseconds = true
-style = "bold 225"
+style = "bold 12"
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
 style = "bold 220"
-conflicted = ''
-ahead = ''
-behind = ''
-diverged = ''
-# up_to_date = ''
-untracked = ''
-stashed = ''
-modified = ''
-staged = ''
-renamed = ''
-deleted = ''
+conflicted = ' '
+ahead = ' '
+behind = ' '
+diverged = ' '
+# up_to_date = ' '
+untracked = ' '
+stashed = ' '
+modified = ' '
+staged = ' '
+renamed = ' '
+deleted = ' '
 
 [aws]
 symbol = " "
