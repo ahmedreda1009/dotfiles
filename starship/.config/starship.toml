@@ -60,7 +60,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-truncation_symbol = "  "
+truncation_symbol = " "
 style = "bold #d79921"
 # truncation_symbol = "~/"
 
