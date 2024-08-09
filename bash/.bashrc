@@ -2,3 +2,5 @@
 
 export PATH="/opt/homebrew/bin:$PATH"
 . "$HOME/.cargo/env"
+
+PATH=~/.console-ninja/.bin:$PATH

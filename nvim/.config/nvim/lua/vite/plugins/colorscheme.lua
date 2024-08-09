@@ -38,8 +38,8 @@ return {
   --         dap_ui = true,
   --         mason = true,
   --         neotree = true,
-  --         notify = true,
-  --         nvimtree = false,
+  --         -- notify = true,
+  --         -- nvimtree = false,
   --         semantic_tokens = true,
   --         symbols_outline = true,
   --         telescope = true,
@@ -52,7 +52,7 @@ return {
   --         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   --       },
   --     })
-  --     -- vim.cmd("colorscheme tokyonight")
+  --     vim.cmd("colorscheme tokyonight")
   --     -- vim.cmd.colorscheme("tokyonight-night")
   --
   --     -- You can configure highlights by doing something like:
@@ -68,11 +68,11 @@ return {
 
     config = function()
       require("catppuccin").setup({
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
-        background = {     -- :h background
-          light = "latte",
-          dark = "mocha",
-        },
+        -- flavour = "mocha", -- latte, frappe, macchiato, mocha
+        -- background = {     -- :h background
+        --   light = "latte",
+        --   dark = "mocha",
+        -- },
         transparent_background = false, -- disables setting the background color.
         show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
         term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
@@ -128,7 +128,7 @@ return {
       })
 
       -- setup must be called before loading
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("catppuccin-mocha")
     end,
   },
 
@@ -155,8 +155,8 @@ return {
   --         dap_ui = true,
   --         mason = true,
   --         neotree = true,
-  --         notify = true,
-  --         nvimtree = false,
+  --         -- notify = true,
+  --         -- nvimtree = false,
   --         semantic_tokens = true,
   --         symbols_outline = true,
   --         telescope = true,
@@ -168,7 +168,7 @@ return {
   --         },
   --       },
   --     }) -- calling setup is optional
-  --     -- vim.cmd([[colorscheme tokyodark]])
+  --     vim.cmd([[colorscheme tokyodark]])
   --   end,
   -- },
   --
@@ -178,7 +178,7 @@ return {
   --   priority = 1000,
   --   opts = {},
   --   config = function()
-  --     -- vim.cmd([[colorscheme abyss]])
+  --     vim.cmd([[colorscheme abyss]])
   --   end
   -- },
   --
@@ -187,7 +187,7 @@ return {
   --   config = function()
   --     require("ayu").setup({})
   --
-  --     -- vim.cmd("colorscheme ayu")
+  --     vim.cmd("colorscheme ayu")
   --   end,
   -- },
   --
@@ -200,14 +200,14 @@ return {
   --       -- ...
   --     })
   --
-  --     -- vim.cmd("colorscheme github_dark_default")
+  --     vim.cmd("colorscheme github_dark_default")
   --   end,
   -- },
   --
   -- {
   --   "xStormyy/bearded-theme.nvim",
   --   config = function()
-  --     -- vim.cmd("colorscheme bearded-theme")
+  --     vim.cmd("colorscheme bearded-theme")
   --   end,
   -- },
   --
