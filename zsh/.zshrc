@@ -144,3 +144,14 @@ eval $(thefuck --alias)
 source <(ng completion script)
 
 PATH=~/.console-ninja/.bin:$PATH
+
+# this adds a new line before each command but not the first one
+precmd() {
+    precmd() {
+        echo
+    }
+}
+# this remove the new line after each clear
+alias clear="precmd() {precmd() {echo }} && clear"
+# use this line if the ctrl + l leaves a new line
+# bindkey -s '^L' 'clear^M'

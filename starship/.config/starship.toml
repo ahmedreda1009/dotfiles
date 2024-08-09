@@ -1,32 +1,17 @@
-# Don't print a new line at the start of the prompt
-add_newline = true
+# Tuck "new line" inside the ($all) variable
+format = """($all
+)$character"""
 
-# format = '''
-# [┌](bold green)
-# [│](bold green)$all[└](bold green)$character '''
-
-
-# [prompt]
-# Add a line break between prompt lines
-# add_newline = true
-# Show the prompt only if there is user input
-# format = "\n$all"
+add_newline = false
 
 [line_break]
-# Add a line break before the prompt character
-disabled = false
-
-# format = """
-# $fill
-# $all
-# """
+disabled = true
 
 [fill]
 symbol = ""
 # style = 'bold purple'
 
 [character]
-# Change the prompt character to an emoji
 success_symbol = "[➜](bold 7)"
 error_symbol = "[➜](bold 130)"
 
@@ -34,6 +19,11 @@ error_symbol = "[➜](bold 130)"
 min_time = 0
 show_milliseconds = true
 style = "bold 12"
+
+[time]
+disabled = false
+use_12hr = true
+format = 'at[  $time ]($style)'
 
 [git_status]
 format = '([$all_status$ahead_behind]($style) )'
@@ -70,7 +60,9 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-truncation_symbol = "~/"
+truncation_symbol = "  "
+style = "bold #d79921"
+# truncation_symbol = "~/"
 
 [docker_context]
 symbol = " "
