@@ -5,12 +5,12 @@ return {
   config = function()
     local my_custom_theme = {
       normal = {
-        a = { bg = "#A9A9A9", fg = "#282A36", gui = "bold" }, -- Vibrant gray
+        a = { bg = "#61AFEF", fg = "#282A36", gui = "bold" }, -- Vibrant blue
         b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
         c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
       insert = {
-        a = { bg = "#61AFEF", fg = "#282A36", gui = "bold" }, -- Vibrant blue
+        a = { bg = "#98C379", fg = "#282A36", gui = "bold" }, -- Vibrant gray
         b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
         c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
