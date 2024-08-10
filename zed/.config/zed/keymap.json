@@ -4,15 +4,18 @@
       "cmd-h": ["workspace::ActivatePaneInDirection", "Left"],
       "cmd-l": ["workspace::ActivatePaneInDirection", "Right"],
       "cmd-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "cmd-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "cmd-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "cmd-j": "menu::SelectNext",
+      "cmd-k": "menu::SelectPrev",
+      "cmd-r": "editor::Redo"
     }
   },
   {
     "context": "not_editing || (Editor && vim_mode == normal)",
     "bindings": {
-      "space ,": "tab_switcher::Toggle",
-      "space space": "file_finder::Toggle",
-      "space e": "workspace::ToggleRightDock"
+      "space space": "tab_switcher::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space e": "workspace::ToggleLeftDock"
     }
   },
   {
@@ -37,8 +40,8 @@
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
-      "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp"
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp"
     }
   },
   {
