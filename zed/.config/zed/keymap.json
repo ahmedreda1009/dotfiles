@@ -5,9 +5,13 @@
       "cmd-l": ["workspace::ActivatePaneInDirection", "Right"],
       "cmd-k": ["workspace::ActivatePaneInDirection", "Up"],
       "cmd-j": ["workspace::ActivatePaneInDirection", "Down"],
-      "cmd-j": "menu::SelectNext",
-      "cmd-k": "menu::SelectPrev",
       "cmd-r": "editor::Redo"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-j": "menu::SelectNext",
+      "cmd-k": "menu::SelectPrev"
     }
   },
   {
