@@ -5,29 +5,29 @@ return {
   config = function()
     local my_custom_theme = {
       normal = {
-        a = { bg = "#61AFEF", fg = "#282A36", gui = "bold" }, -- Vibrant blue
-        b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- Vibrant blue
+        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
+        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
       insert = {
-        a = { bg = "#98C379", fg = "#282A36", gui = "bold" }, -- Vibrant gray
-        b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#98C379", fg = "#1a1b26", gui = "bold" }, -- Vibrant gray
+        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
+        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
       visual = {
-        a = { bg = "#FF61EF", fg = "#282A36", gui = "bold" }, -- Vibrant purple
-        b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#FF61EF", fg = "#1a1b26", gui = "bold" }, -- Vibrant purple
+        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
+        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
       command = {
-        a = { bg = "#FFDA7B", fg = "#282A36", gui = "bold" }, -- Vibrant yellow
-        b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#FFDA7B", fg = "#1a1b26", gui = "bold" }, -- Vibrant yellow
+        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
+        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
       replace = {
-        a = { bg = "#FF5555", fg = "#282A36", gui = "bold" }, -- Vibrant red
-        b = { bg = "#505050", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#282A36", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#FF5555", fg = "#1a1b26", gui = "bold" }, -- Vibrant red
+        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
+        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
       },
       inactive = {
         a = { bg = "#44475a", fg = "#6272a4", gui = "bold" }, -- gray
@@ -59,7 +59,10 @@ return {
         theme = my_custom_theme,
         -- component_separators = { left = "", right = "" },
         component_separators = { left = "|", right = "|" },
-        section_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        -- section_separators = { left = "", right = "" },
+        -- section_separators = { left = "█", right = "█" },
+        -- section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = {},
           winbar = {},

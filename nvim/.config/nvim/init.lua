@@ -3,7 +3,8 @@ require("vite.lazy")
 -- require("vite.theme")
 
 -- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FFC900", bold = true })
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffda7b", bold = true })
+-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffda7b", bold = true })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#fab387", bold = true })
 
 -- tabnine config
 require("tabnine").setup({

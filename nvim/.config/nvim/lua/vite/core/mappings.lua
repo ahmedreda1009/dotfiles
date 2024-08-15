@@ -32,6 +32,9 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 -- lazy
 map("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
+-- Remove the <C-K> keybinding in Nvim
+map('n', '<C-K>', '', { desc = 'Disable C-K' })
+
 -- VimTmuxNavigator
 map("n", "<c-h>", "<cmd>TmuxNavigateLeft<CR>", { noremap = true, silent = true })
 map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { noremap = true, silent = true })
@@ -40,4 +43,4 @@ map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { noremap = true, silent = true 
 map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", { noremap = true, silent = true })
 
 -- theme switcher
-map("n", "<leader>th", "<cmd>Themery<CR>", { desc = "Theme Switcher" })
+-- map("n", "<leader>th", "<cmd>Themery<CR>", { desc = "Theme Switcher" })
