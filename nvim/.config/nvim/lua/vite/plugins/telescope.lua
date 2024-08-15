@@ -41,8 +41,8 @@ return {
           layout_config = {
             horizontal = {
               -- prompt_position = "top",
-              -- preview_width = 0.55,
-              -- results_width = 0.8,
+              preview_width = 0.5,
+              results_width = 0.5,
             },
             vertical = {
               mirror = false,
@@ -55,8 +55,6 @@ return {
           file_ignore_patterns = { "node_modules" },
           generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
           path_display = { "truncate" },
-          winblend = 0,
-          border = {},
           -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
           borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
           color_devicons = true,
@@ -108,13 +106,14 @@ return {
         highlight TelescopePromptBorder guifg=#414868 guibg=#303041
         highlight TelescopeResultsBorder guifg=#414868 guibg=#16161e
         highlight TelescopePreviewBorder guifg=#414868 guibg=#16161e
+        highlight TelescopePreviewTitle guibg=#9ece6a guifg=#16161e
+        highlight TelescopePreviewNormal guibg=#16161e guifg=#16161e
         highlight TelescopePromptNormal guifg=#c0caf5 guibg=#303041
         highlight TelescopePromptPrefix guifg=#e0af68 guibg=#303041
         highlight TelescopeNormal guifg=#a9b1d6 guibg=#16161e
-        highlight TelescopePreviewTitle guibg=#9ece6a guifg=#16161e
-        highlight TelescopePromptTitle guibg=#e0af68 guifg=#16161e
-        f
+        highlight TelescopePromptTitle guibg=#DF6B74 guifg=#16161e
         highlight TelescopeResultsTitle guibg=#7aa2f7 guifg=#16161e
+        highlight TelescopeResultsNormal guibg=#16161e guifg=#ffffff
         highlight TelescopeSelection guifg=#e0af68 guibg=#303041
         highlight TelescopeMatching guifg=#e0af68 guibg=#16161e
       ]])

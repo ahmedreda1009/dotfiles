@@ -13,7 +13,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-buffer", -- source for text in buffer
-      "hrsh7th/cmp-path", -- source for file system paths
+      "hrsh7th/cmp-path",   -- source for file system paths
     },
     config = function()
       local cmp = require("cmp")
@@ -116,7 +116,7 @@ return {
 
       -- Set highlight for the selected item background to vibrant green
       -- vim.api.nvim_set_hl(0, "CmpSel", { bg = "#7AA2F7", fg = "#16161E" })
-      vim.api.nvim_set_hl(0, "CmpSel", { bg = "#FFC900", fg = "#16161E" })
+      vim.api.nvim_set_hl(0, "CmpSel", { bg = "#fab387", fg = "#16161E" })
       vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#16161E" })
       vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#282A36" })
       vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#16161E" })
