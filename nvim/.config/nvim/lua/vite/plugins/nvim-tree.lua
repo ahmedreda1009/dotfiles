@@ -8,7 +8,22 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
+    local function my_on_attach(bufnr)
+      local api = require "nvim-tree.api"
+
+      local function opts(desc)
+        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+      end
+
+      -- default mappings
+      api.config.mappings.default_on_attach(bufnr)
+
+      -- unmap <C-k> to prevent it from conflicting with Tmux pane navigation
+      vim.keymap.set('n', '<C-k>', ':<C-U>TmuxNavigateUp<CR>', opts('Unmap C-k'))
+    end
+
     nvimtree.setup({
+      on_attach = my_on_attach,
       filters = {
         dotfiles = false,
       },
@@ -26,6 +41,11 @@ return {
         side = "left",
         width = 30,
         preserve_window_proportions = true,
+        mappings = {
+          list = {
+            { key = "<C-k>", action = "" }, -- Disable the default <Cmd + k> mapping
+          },
+        },
       },
       git = {
         enable = true,
