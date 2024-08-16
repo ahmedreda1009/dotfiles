@@ -79,7 +79,15 @@ return {
       sections = {
         lualine_a = { getVimIcon },
         lualine_b = { "branch" },
-        lualine_c = { "diff", "diagnostics", "filename", "lsp_progress" },
+        lualine_c = { "filename", {
+          "harpoon2",
+          -- icon = '♥',
+          -- indicators = { "a", "s", "q", "w" },
+          -- active_indicators = { "A", "S", "Q", "W" },
+          -- _separator = " ",
+          -- no_harpoon = "Harpoon not loaded",
+        }, "diff", "diagnostics", "lsp_progress"
+        },
         lualine_x = { "tabnine", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
