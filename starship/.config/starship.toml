@@ -12,8 +12,8 @@ symbol = ""
 # style = 'bold purple'
 
 [character]
-success_symbol = "[➜](bold 7)"
-error_symbol = "[➜](bold 130)"
+success_symbol = "[➜ ](bold 7)"
+error_symbol = "[➜ ](bold 130)"
 
 [cmd_duration]
 min_time = 0

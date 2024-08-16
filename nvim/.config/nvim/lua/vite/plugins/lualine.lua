@@ -50,7 +50,8 @@ return {
         ["!"] = "SHELL",
       }
       local mode_name = mode_names[mode]
-      return " " .. mode_name
+      -- return " " .. mode_name
+      return mode_name
     end
 
     require("lualine").setup({
@@ -77,16 +78,20 @@ return {
         },
       },
       sections = {
-        lualine_a = { getVimIcon },
+        lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { "filename", {
+        lualine_c = { {
           "harpoon2",
-          -- icon = '♥',
-          -- indicators = { "a", "s", "q", "w" },
-          -- active_indicators = { "A", "S", "Q", "W" },
-          -- _separator = " ",
-          -- no_harpoon = "Harpoon not loaded",
-        }, "diff", "diagnostics", "lsp_progress"
+          icon = ' ',
+          -- indicators = { "1", "2", "3", "4", "5", "6" },
+          -- active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]" },
+          -- indicators = { "󰎦", "󰎩", "󰎬", "󰎮", "󰎰", "󰎵", "󰎸", "󰎻", "󰎾", "󰽾" },
+          -- active_indicators = { "󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼", "󰽽" },
+          indicators = { "󰲡", "󰲣", "󰲥", "󰲧", "󰲩", "󰲫", "󰲭", "󰲯", "󰲱", "󰿭" },
+          active_indicators = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰", "󰿬" },
+          _separator = "",
+          no_harpoon = "󰎡",
+        }, "filename", "diff", "diagnostics", "lsp_progress"
         },
         lualine_x = { "tabnine", "filetype" },
         lualine_y = { "progress" },
