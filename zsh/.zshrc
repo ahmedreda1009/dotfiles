@@ -156,8 +156,8 @@ alias clear="precmd() {precmd() {echo }} && clear"
 # use this line if the ctrl + l leaves a new line
 # bindkey -s '^L' 'clear^M'
 
-# opens tmux when opening the terminal
-# If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-# Otherwise start tmux
-[[ -z "$TMUX" ]] && exec tmux
+# # opens tmux when opening the terminal
+# # If not running interactively, do not do anything
+# [[ $- != *i* ]] && return
+# # Otherwise start tmux
+# [[ -z "$TMUX" ]] && exec tmux

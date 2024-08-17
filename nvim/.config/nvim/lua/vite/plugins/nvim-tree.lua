@@ -98,7 +98,7 @@ return {
               unmerged = "",
               renamed = "➜",
               -- untracked = " ",
-              untracked = " ",
+              untracked = "",
               deleted = "",
               ignored = "◌",
             },

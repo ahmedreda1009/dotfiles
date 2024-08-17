@@ -25,20 +25,31 @@ disabled = false
 use_12hr = true
 format = 'at[  $time ]($style)'
 
-[git_status]
-format = '([$all_status$ahead_behind]($style) )'
-style = "bold 220"
-conflicted = ' '
-ahead = ' '
-behind = ' '
-diverged = ' '
+# [git_status]
+# format = '([$all_status$ahead_behind]($style) )'
+# style = "bold 220"
+# conflicted = ' '
+# ahead = ' '
+# behind = ' '
+# diverged = ' '
 # up_to_date = ' '
-untracked = ' '
-stashed = ' '
-modified = ' '
-staged = ' '
-renamed = ' '
-deleted = ' '
+# untracked = ' '
+# stashed = ' '
+# modified = ' '
+# staged = ' '
+# renamed = ' '
+# deleted = ' '
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
 
 [aws]
 symbol = " "
