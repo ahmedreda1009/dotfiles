@@ -15,10 +15,10 @@ symbol = ""
 # success_symbol = "[➜](bold 7)"
 # error_symbol = "[➜](bold 130)"
 
-# [character]
-# success_symbol = "[❯](purple)"
-# error_symbol = "[❯](red)"
-# vimcmd_symbol = "[❮](green)"
+[character]
+success_symbol = "[❯](bold #7aa2f7)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
 
 [cmd_duration]
 min_time = 0
@@ -30,31 +30,22 @@ disabled = false
 use_12hr = true
 format = 'at[  $time ]($style)'
 
-# [git_status]
-# format = '([$all_status$ahead_behind]($style) )'
-# style = "bold 220"
-# conflicted = ' '
-# ahead = ' '
-# behind = ' '
-# diverged = ' '
-# up_to_date = ' '
-# untracked = ' '
-# stashed = ' '
-# modified = ' '
-# staged = ' '
-# renamed = ' '
-# deleted = ' '
-
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
-stashed = "≡"
+format = "[$all_status]($style) "
+# format = "[$all_status$ahead_behind]($style) "
+# style = "bold green"
+style = "bold 210"
+conflicted = ''
+ahead = '↑'
+behind = '↓'
+diverged = '⇆'
+up_to_date = '✔'
+untracked = '…'
+stashed = '⧉'
+modified = '✎'
+staged = '★'
+renamed = '➜'
+deleted = '✘'
 
 [aws]
 symbol = " "
@@ -77,7 +68,8 @@ symbol = " "
 [directory]
 read_only = " 󰌾"
 truncation_symbol = " "
-style = "bold #d79921"
+# style = "bold #d79921"
+style = "bold #7aa2f7"
 # truncation_symbol = "~/"
 
 [docker_context]
