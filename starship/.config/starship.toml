@@ -1,5 +1,5 @@
 # Tuck "new line" inside the ($all) variable
-format = """($all
+format = """($all$time$cmd_duration
 )$character"""
 
 add_newline = false
