@@ -5,8 +5,10 @@ return {
     indent = {
       -- char = "│",
       -- tab_char = "│",
-      char = "▍",
-      tab_char = "▍",
+      char = "┃",
+      tab_char = "┃",
+      -- char = "▍",
+      -- tab_char = "▍",
       -- char = "▌",
       -- tab_char = "▌",
     },
