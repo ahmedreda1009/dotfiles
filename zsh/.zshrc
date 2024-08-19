@@ -161,3 +161,10 @@ alias clear="precmd() {precmd() {echo }} && clear"
 # [[ $- != *i* ]] && return
 # # Otherwise start tmux
 # [[ -z "$TMUX" ]] && exec tmux
+
+# bun completions
+[ -s "/Users/ahmedreda/.bun/_bun" ] && source "/Users/ahmedreda/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
