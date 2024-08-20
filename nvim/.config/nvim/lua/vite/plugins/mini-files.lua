@@ -13,7 +13,7 @@ return {
     end
 
     -- Key mapping to toggle mini.files
-    vim.keymap.set('n', '.', minifiles_toggle, { noremap = true, silent = true, desc = 'Toggle mini files' })
+    vim.keymap.set('n', ';', minifiles_toggle, { noremap = true, silent = true, desc = 'Toggle mini files' })
 
     -- highlight groups
     vim.cmd([[

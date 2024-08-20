@@ -19,7 +19,7 @@ return {
     -- REQUIRED
 
     vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end, { desc = "Add to Harpoon" })
-    vim.keymap.set("n", ",", function()
+    vim.keymap.set("n", ".", function()
       -- close mini files before opening harpoon
       require('mini.files').close()
       harpoon.ui:toggle_quick_menu(harpoon:list())
