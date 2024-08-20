@@ -3,12 +3,16 @@ return {
   version = false,
   config = function()
     local MiniFiles = require('mini.files')
-    MiniFiles.setup()
+    MiniFiles.setup({
+      sync_current_file = true,
+    })
 
     -- Function to toggle mini.files
     local minifiles_toggle = function()
       if not MiniFiles.close() then
-        MiniFiles.open()
+        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+        -- Prepend branch with parent paths until current working directory is reached
+        MiniFiles.reveal_cwd()
       end
     end
 
