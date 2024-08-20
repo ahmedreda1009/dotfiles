@@ -89,8 +89,10 @@ return {
               -- symlink_open = "",
               -- arrow_open = "",
               -- arrow_closed = "",
-              arrow_closed = "", -- arrow when folder is closed
-              arrow_open = "", -- arrow when folder is open
+              -- arrow_closed = "", -- arrow when folder is closed
+              -- arrow_open = "", -- arrow when folder is open
+              -- arrow_closed = " ", -- arrow when folder is closed
+              -- arrow_open = " ",   -- arrow when folder is open
             },
             git = {
               unstaged = "✱",
