@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = "nvim-tree/nvim-web-devicons",
@@ -22,7 +26,7 @@ return {
       vim.keymap.set('n', '<C-k>', ':<C-U>TmuxNavigateUp<CR>', opts('Unmap C-k'))
 
       local harpoon = require("harpoon")
-      vim.keymap.set("n", "-", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, opts('ReMap - for harpoon'))
+      vim.keymap.set("n", ".", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, opts('ReMap - for harpoon'))
     end
 
     nvimtree.setup({
