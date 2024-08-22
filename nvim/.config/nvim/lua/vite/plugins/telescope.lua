@@ -86,6 +86,10 @@ return {
             -- theme = "dropdown",
             prompt_title = "󰩉 Find Files",
           },
+          grep_string = {
+            initial_mode = "normal", -- Set initial_mode to normal for
+            prompt_title = "Word Under Cursor",
+          }
         },
       })
 
@@ -94,12 +98,30 @@ return {
       require('telescope').load_extension('fzf')
 
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[f]ind files" })
-      vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[l]ive grep" })
-      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[b]uffers search" })
-      vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[h]elp tags" })
-      vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[w]ord find" })
-      vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+      vim.keymap.set("n", "<leader>ff", function()
+        require('mini.files').close()
+        builtin.find_files()
+      end, { desc = "[f]ind files" })
+      vim.keymap.set("n", "<leader>fg", function()
+        require('mini.files').close()
+        builtin.live_grep()
+      end, { desc = "[l]ive grep" })
+      vim.keymap.set("n", "<leader><leader>", function()
+        require('mini.files').close()
+        builtin.buffers()
+      end, { desc = "[b]uffers search" })
+      vim.keymap.set("n", "<leader>fh", function()
+        require('mini.files').close()
+        builtin.help_tags()
+      end, { desc = "[h]elp tags" })
+      vim.keymap.set("n", "<leader>fw", function()
+        require('mini.files').close()
+        builtin.grep_string()
+      end, { desc = "[w]ord find" })
+      vim.keymap.set("n", "<leader>ft", function()
+        require('mini.files').close()
+        vim.api.nvim_command("TodoTelescope")
+      end, { desc = "Find todos" })
 
       vim.cmd([[
         highlight TelescopeBorder guifg=#414868 guibg=#16161e
