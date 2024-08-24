@@ -44,3 +44,6 @@ map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", { noremap = true, silent = t
 
 -- theme switcher
 -- map("n", "<leader>th", "<cmd>Themery<CR>", { desc = "Theme Switcher" })
+
+-- auto-save toggle
+map("n", "<leader>n", ":ASToggle<CR>", { desc = "Toggle Auto Save" })
