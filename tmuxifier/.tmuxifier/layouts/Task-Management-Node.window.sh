@@ -6,7 +6,7 @@ window_root "/Users/ahmedreda/Documents/Folders/Projects/Task-Management/Task-Ma
 # layout file name.
 new_window "Task-Management-Node"
 split_v 20
-run_cmd ""
+run_cmd "npm start"
 select_pane 1
 run_cmd "nvim ."
 
