@@ -4,7 +4,7 @@ window_root "/Users/ahmedreda/Documents/Folders/Projects/Task-Management/Task-Ma
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "Task-Management-Angular"
+new_window "TM-Angular"
 split_v 20
 run_cmd "ng serve -o"
 select_pane 1

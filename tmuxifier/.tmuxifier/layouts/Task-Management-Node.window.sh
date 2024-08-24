@@ -4,7 +4,7 @@ window_root "/Users/ahmedreda/Documents/Folders/Projects/Task-Management/Task-Ma
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "Task-Management-Node"
+new_window "TM-Node"
 split_v 20
 run_cmd "npm start"
 select_pane 1

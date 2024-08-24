@@ -4,7 +4,7 @@ window_root "/Users/ahmedreda/Documents/Folders/Projects/Task-Management/Task-Ma
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
-new_window "Task-Management-React"
+new_window "TM-React"
 split_v 20
 run_cmd "npm run dev"
 select_pane 1
