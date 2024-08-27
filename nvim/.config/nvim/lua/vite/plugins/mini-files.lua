@@ -3,12 +3,26 @@ return {
   version = false,
   config = function()
     local MiniFiles = require('mini.files')
+
+    local my_prefix = function(fs_entry)
+      if fs_entry.fs_type == 'directory' then
+        -- NOTE: it is usually a good idea to use icon followed by space
+        return ' ', 'MiniFilesDirectory'
+      end
+      return MiniFiles.default_prefix(fs_entry)
+    end
+
     MiniFiles.setup({
       sync_current_file = true,
       -- mappings = {
       --   go_in = 'L',
       --   go_in_plus = 'l',
       -- },
+      windows = {
+        preview = true,
+        width_preview = 50,
+      },
+      content = { prefix = my_prefix }
     })
 
     -- Function to toggle mini.files
@@ -30,12 +44,27 @@ return {
       end
     end
 
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesWindowOpen',
+      callback = function(args)
+        local win_id = args.data.win_id
+
+        -- Customize window-local settings
+        vim.wo[win_id].winblend = 0
+        local config = vim.api.nvim_win_get_config(win_id)
+        config.border, config.title_pos = 'double', 'center'
+        vim.api.nvim_win_set_config(win_id, config)
+      end,
+    })
+
     -- Key mapping to toggle mini.files
     vim.keymap.set('n', ';', minifiles_toggle, { noremap = true, silent = true, desc = 'Toggle mini files' })
 
     -- highlight groups
     vim.cmd([[
-      highlight MiniFilesTitleFocused guifg=#fab387
+      highlight MiniFilesTitleFocused guibg=#fab387 guifg=#222222
+      highlight MiniFilesBorderModified guifg=#ff0000
+      "highlight  MiniFilesCursorLine guibg=#fab387
     ]])
 
 
