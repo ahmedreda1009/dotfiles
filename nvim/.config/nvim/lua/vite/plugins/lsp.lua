@@ -25,11 +25,11 @@ return {
           -- "sqls",
           -- "prismals",
           -- "emmet_language_server",
-          -- "emmet_ls",
+          "emmet_ls",
           -- "diagnosticls", -- general purpose server
           -- "solargraph", -- ruby
-          -- "somesass_ls", -- sass
-          -- "cssmodules_ls", -- css modules lsp
+          "somesass_ls",   -- sass
+          "cssmodules_ls", -- css modules lsp
         },
       })
 
@@ -119,6 +119,18 @@ return {
         capabilities = capabilities,
       })
       lspconfig.angularls.setup({
+        -- on_attach = attach
+        capabilities = capabilities,
+      })
+      lspconfig.emmet_ls.setup({
+        -- on_attach = attach
+        capabilities = capabilities,
+      })
+      lspconfig.somesass_ls.setup({
+        -- on_attach = attach
+        capabilities = capabilities,
+      })
+      lspconfig.cssmodules_ls.setup({
         -- on_attach = attach
         capabilities = capabilities,
       })
