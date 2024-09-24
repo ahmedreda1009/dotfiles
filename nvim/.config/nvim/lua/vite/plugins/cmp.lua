@@ -91,18 +91,19 @@ return {
         mapping = {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-c>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
           ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         },
         sources = {
-          { name = "vsnip",   priority = 1000 },
-          { name = "luasnip" }, -- For luasnip users.
-          { name = "nvim_lsp" },
-          { name = "buffer" },
+          -- { name = "vsnip",   priority = 1000 },
+          -- { name = "vsnip" },
           { name = "path" },
+          { name = "nvim_lsp" },
+          { name = "luasnip" }, -- For luasnip users.
+          { name = "buffer" },
         },
 
         -- formatting = {
