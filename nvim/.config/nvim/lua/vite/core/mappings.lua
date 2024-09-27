@@ -5,6 +5,9 @@ map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", ";", ":", { desc = "command" })
 -- map("i", "jf", "<ESC>")
 
+local discipline = require('vite.configs.discipline')
+discipline.cowboy()
+
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 

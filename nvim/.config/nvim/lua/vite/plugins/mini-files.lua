@@ -97,7 +97,8 @@ return {
       "highlight MiniFilesCursorLine guibg=#D9E6F2
       "highlight MiniFilesDirectory guibg=#F5C2E7 guifg=#1E1E2E gui=bold
       "highlight MiniFilesFile guibg=#1E1E2E guifg=#C3BAC6
-      highlight MiniFilesNormal guibg=#1E1E2E guifg=#F8BD96
+      "highlight MiniFilesNormal guibg=#1E1E2E guifg=#F8BD96
+      highlight MiniFilesNormal guibg=#1E1E2E
     ]])
 
     -- * `MiniFilesBorder` - border of regular windows.
