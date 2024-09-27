@@ -5,34 +5,40 @@ return {
   config = function()
     local my_custom_theme = {
       normal = {
-        a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- Vibrant blue
-        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
+        b = { bg = "#2a2f41", fg = "#ffffff", gui = "bold" }, -- darker gray
+        c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
+        z = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       insert = {
-        a = { bg = "#98C379", fg = "#1a1b26", gui = "bold" }, -- Vibrant gray
-        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- vibrant gray
+        b = { bg = "#2a2f41", fg = "#ffffff", gui = "bold" }, -- darker gray
+        c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
+        z = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       visual = {
-        a = { bg = "#FF61EF", fg = "#1a1b26", gui = "bold" }, -- Vibrant purple
-        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#ff61ef", fg = "#1a1b26", gui = "bold" }, -- vibrant purple
+        b = { bg = "#2a2f41", fg = "#ffffff", gui = "bold" }, -- darker gray
+        c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
+        z = { bg = "#ff61ef", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       command = {
-        a = { bg = "#FFDA7B", fg = "#1a1b26", gui = "bold" }, -- Vibrant yellow
-        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#ffda7b", fg = "#1a1b26", gui = "bold" }, -- vibrant yellow
+        b = { bg = "#2a2f41", fg = "#ffffff", gui = "bold" }, -- darker gray
+        c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
+        z = { bg = "#ffda7b", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       replace = {
-        a = { bg = "#FF5555", fg = "#1a1b26", gui = "bold" }, -- Vibrant red
-        b = { bg = "#2a2f41", fg = "#FFFFFF", gui = "bold" }, -- Darker gray
-        c = { bg = "#1a1b26", fg = "#FFFFFF", gui = "bold" }, -- Light gray
+        a = { bg = "#ff5555", fg = "#1a1b26", gui = "bold" }, -- vibrant red
+        b = { bg = "#2a2f41", fg = "#ffffff", gui = "bold" }, -- darker gray
+        c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
+        z = { bg = "#ff5555", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       inactive = {
         a = { bg = "#44475a", fg = "#6272a4", gui = "bold" }, -- gray
         b = { bg = "#44475a", fg = "#6272a4", gui = "bold" }, -- light gray
         c = { bg = "#44475a", fg = "#6272a4", gui = "bold" }, -- light gray
+        z = { bg = "#2a2f41", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
     }
 
@@ -60,10 +66,13 @@ return {
         theme = my_custom_theme,
         -- component_separators = { left = "", right = "" },
         -- component_separators = { left = "|", right = "|" },
-        component_separators = { left = "┃", right = "┃", },
-        section_separators = { left = "", right = "" },
+        -- component_separators = { left = "┃", right = "┃", },
+        component_separators = { left = "", right = "", },
+        -- section_separators = { left = "", right = "" },
         -- section_separators = { left = "", right = "" },
         -- section_separators = { left = "█", right = "█" },
+        -- section_separators = { left = "█", right = "█" },
+        section_separators = { left = "", right = "" },
         -- section_separators = { left = "", right = "" },
         disabled_filetypes = {
           statusline = {},
@@ -80,23 +89,28 @@ return {
       },
       sections = {
         lualine_a = { "mode" },
-        lualine_b = { "branch" },
-        lualine_c = { {
-          "harpoon2",
-          icon = ' ',
-          -- indicators = { "1", "2", "3", "4", "5", "6" },
-          -- active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]" },
-          -- indicators = { "󰎦", "󰎩", "󰎬", "󰎮", "󰎰", "󰎵", "󰎸", "󰎻", "󰎾", "󰽾" },
-          -- active_indicators = { "󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼", "󰽽" },
-          indicators = { "󰲡", "󰲣", "󰲥", "󰲧", "󰲩", "󰲫", "󰲭", "󰲯", "󰲱", "󰿭" },
-          active_indicators = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰", "󰿬" },
-          _separator = "",
-          no_harpoon = "󰎡",
-        }, "filename", "diff", "diagnostics", "lsp_progress"
+        lualine_b = { {
+          function() return ' ' end,
+          padding = { left = 0, right = 0 }
+        } },
+        lualine_c = {
+          {
+            "harpoon2",
+            icon = ' ',
+            -- indicators = { "1", "2", "3", "4", "5", "6" },
+            -- active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]", "[6]" },
+            -- indicators = { "󰎦", "󰎩", "󰎬", "󰎮", "󰎰", "󰎵", "󰎸", "󰎻", "󰎾", "󰽾" },
+            -- active_indicators = { "󰎤", "󰎧", "󰎪", "󰎭", "󰎱", "󰎳", "󰎶", "󰎹", "󰎼", "󰽽" },
+            indicators = { "󰲡", "󰲣", "󰲥", "󰲧", "󰲩", "󰲫", "󰲭", "󰲯", "󰲱", "󰿭" },
+            active_indicators = { "󰲠", "󰲢", "󰲤", "󰲦", "󰲨", "󰲪", "󰲬", "󰲮", "󰲰", "󰿬" },
+            _separator = "",
+            no_harpoon = "󰎡",
+          },
         },
-        lualine_x = { "tabnine", "filetype" },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
+        lualine_x = { "diff", "diagnostics", "lsp_progress" },
+        -- lualine_x = { "tabnine", "diff", "diagnostics", "lsp_progress", "filename", },
+        lualine_y = { "filetype", "location", "progress", },
+        lualine_z = { "branch" },
       },
       inactive_sections = {
         lualine_a = {},

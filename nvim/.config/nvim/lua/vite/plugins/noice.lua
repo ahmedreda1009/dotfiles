@@ -1,7 +1,7 @@
-if true then
-  return {}
-end
-
+-- if true then
+--   return {}
+-- end
+--
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
@@ -36,4 +36,7 @@ return {
       },
     })
   end,
+  keys = {
+    { "<leader>dm", function() require("noice").cmd("dismiss") end, desc = "Dismiss All messages" },
+  },
 }

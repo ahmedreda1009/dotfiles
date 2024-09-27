@@ -52,7 +52,7 @@ return {
         -- Customize window-local settings
         vim.wo[win_id].winblend = 0
         local config = vim.api.nvim_win_get_config(win_id)
-        config.border, config.title_pos = 'double', 'center'
+        config.border, config.title_pos = 'single', 'center'
         vim.api.nvim_win_set_config(win_id, config)
       end,
     })
@@ -60,13 +60,54 @@ return {
     -- Key mapping to toggle mini.files
     vim.keymap.set('n', 'f', minifiles_toggle, { noremap = true, silent = true, desc = 'Toggle mini files' })
 
+    -- add padding to titles
+    vim.api.nvim_create_autocmd('User', {
+      pattern = 'MiniFilesWindowUpdate',
+      callback = function(args)
+        local config = vim.api.nvim_win_get_config(args.data.win_id)
+
+        -- Ensure fixed height
+        -- config.height = 10
+
+        -- Ensure title padding
+        if config.title[#config.title][1] ~= ' ' then
+          table.insert(config.title, { ' ', 'NormalFloat' })
+        end
+        if config.title[1][1] ~= ' ' then
+          table.insert(config.title, 1, { ' ', 'NormalFloat' })
+        end
+
+        vim.api.nvim_win_set_config(args.data.win_id, config)
+      end,
+    })
+
     -- highlight groups
+    -- vim.cmd([[
+    --   highlight MiniFilesTitleFocused guibg=#fab387 guifg=#222222
+    --   highlight MiniFilesBorderModified guifg=#ff0000
+    --   highlight MiniFilesNormal guibg=#1e1e2f
+    -- ]])
     vim.cmd([[
-      highlight MiniFilesTitleFocused guibg=#fab387 guifg=#222222
-      highlight MiniFilesBorderModified guifg=#ff0000
-      "highlight  MiniFilesCursorLine guibg=#fab387
+      highlight MiniFilesTitleFocused guibg=#F8BD96 guifg=#1E1E2E gui=bold
+      "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#1E1E2E gui=bold
+      highlight MiniFilesTitle guifg=#F8BD96 gui=bold
+      "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#1E1E2E gui=bold
+      highlight MiniFilesBorder guifg=#F8BD96
+      highlight MiniFilesBorderModified guifg=#F38BA8
+      "highlight MiniFilesCursorLine guibg=#D9E6F2
+      "highlight MiniFilesDirectory guibg=#F5C2E7 guifg=#1E1E2E gui=bold
+      "highlight MiniFilesFile guibg=#1E1E2E guifg=#C3BAC6
+      highlight MiniFilesNormal guibg=#1E1E2E guifg=#F8BD96
     ]])
 
+    -- * `MiniFilesBorder` - border of regular windows.
+    -- * `MiniFilesBorderModified` - border of windows showing modified buffer.
+    -- * `MiniFilesCursorLine` - cursor line in explorer windows.
+    -- * `MiniFilesDirectory` - text and icon representing directory.
+    -- * `MiniFilesFile` - text representing file.
+    -- * `MiniFilesNormal` - basic foreground/background highlighting.
+    -- * `MiniFilesTitle` - title of regular windows.
+    -- * `MiniFilesTitleFocused` - title of focused window.
 
     ---- prevent the go out fn to go out of the entry directory
     local anchor_dir = ""

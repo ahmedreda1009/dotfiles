@@ -19,6 +19,19 @@ return {
       local cmp = require("cmp")
       require("luasnip.loaders.from_vscode").lazy_load()
 
+      local function border(hl_name)
+        return {
+          { "╭", hl_name },
+          { "─", hl_name },
+          { "╮", hl_name },
+          { "│", hl_name },
+          { "╯", hl_name },
+          { "─", hl_name },
+          { "╰", hl_name },
+          { "│", hl_name },
+        }
+      end
+
       local cmp_ui = {
         icons = true,
         lspkind_text = true,
@@ -53,31 +66,35 @@ return {
 
         window = {
           completion = {
-            border = {
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-              { " ", "CmpPmenuBorder" },
-            },
+            -- border = {
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            --   { " ", "CmpPmenuBorder" },
+            -- },
+
+            border = border "CmpBorder",
             -- side_padding = 1,
             winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:None",
             scrollbar = true,
           },
           documentation = {
-            border = {
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-              { " ", "CmpDocBorder" },
-            },
+            -- border = {
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            --   { " ", "CmpDocBorder" },
+            -- },
+
+            border = border "mpDocBorder",
             -- side_padding = 1,
             winhighlight = "Normal:CmpDoc",
           },
@@ -100,10 +117,16 @@ return {
         sources = {
           -- { name = "vsnip",   priority = 1000 },
           -- { name = "vsnip" },
-          { name = "path" },
+          -- { name = "path" },
+          -- { name = "nvim_lsp" },
+          -- { name = "luasnip" }, -- For luasnip users.
+          -- { name = "buffer" },
+
           { name = "nvim_lsp" },
-          { name = "luasnip" }, -- For luasnip users.
+          { name = "luasnip" },
           { name = "buffer" },
+          { name = "nvim_lua" },
+          { name = "path" },
         },
 
         -- formatting = {
@@ -117,11 +140,18 @@ return {
 
       -- Set highlight for the selected item background to vibrant green
       -- vim.api.nvim_set_hl(0, "CmpSel", { bg = "#7AA2F7", fg = "#16161E" })
+
+      -- vim.api.nvim_set_hl(0, "CmpSel", { bg = "#fab387", fg = "#16161E" })
+      -- vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#16161E" })
+      -- vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#282A36" })
+      -- vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#16161E" })
+      -- vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = "#282A36" })
+
       vim.api.nvim_set_hl(0, "CmpSel", { bg = "#fab387", fg = "#16161E" })
-      vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#16161E" })
-      vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#282A36" })
-      vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#16161E" })
-      vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = "#282A36" })
+      vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#1e1e2f" })
+      vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#1e1e2f" })
+      vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#1e1e2f" })
+      vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = "#1e1e2f" })
     end,
   },
 }
