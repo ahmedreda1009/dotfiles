@@ -5,10 +5,11 @@ return {
   config = function()
     local my_custom_theme = {
       normal = {
-        a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
+        a = { bg = "#02f1f5", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
+        -- a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
         b = { bg = "#2a2f41", fg = "#ffffff", gui = "bold" }, -- darker gray
         c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
-        z = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- light gray
+        z = { bg = "#02f1f5", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       insert = {
         a = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- vibrant gray

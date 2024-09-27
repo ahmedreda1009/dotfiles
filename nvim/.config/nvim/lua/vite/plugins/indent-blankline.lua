@@ -15,7 +15,7 @@ return {
     whitespace = {
       remove_blankline_trail = false,
     },
-    scope = { show_start = true, show_end = true },
+    scope = { show_start = false, show_end = false },
     exclude = {
       filetypes = {
         "help",
