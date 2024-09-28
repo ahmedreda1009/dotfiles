@@ -108,9 +108,12 @@ return {
             no_harpoon = "󰎡",
           },
         },
-        lualine_x = { "diff", "diagnostics", "lsp_progress" },
+        lualine_x = { "diff", "diagnostics", "lsp_progress", "filetype", "location", "progress" },
         -- lualine_x = { "tabnine", "diff", "diagnostics", "lsp_progress", "filename", },
-        lualine_y = { "filetype", "location", "progress", },
+        lualine_y = { {
+          function() return ' ' end,
+          padding = { left = 0, right = 0 }
+        }, },
         lualine_z = { "branch" },
       },
       inactive_sections = {
