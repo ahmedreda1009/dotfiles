@@ -1,31 +1,36 @@
 -- filename
-return
-{
+return {
   "b0o/incline.nvim",
-  dependencies = { "craftzdog/solarized-osaka.nvim" },
+  dependencies = {},
   event = "BufReadPre",
   priority = 1200,
   config = function()
-    local colors = require("solarized-osaka.colors").setup()
+    local helpers = require("incline.helpers")
     require("incline").setup({
       highlight = {
         groups = {
-          InclineNormal = { guibg = "#d23781", guifg = "#1e1e2f" },
-          InclineNormalNC = { guifg = "#5b6891", guibg = "#1a1b26" },
+          InclineNormal = { guifg = "#ffffff" },
+          InclineNormalNC = { guifg = "#5b6891" },
         },
       },
-      window = { margin = { vertical = 0, horizontal = 0 } },
-      hide = {
-        cursorline = false,
+      window = {
+        padding = 0,
+        margin = { horizontal = 0 },
+        zindex = 100
       },
       render = function(props)
         local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-        if vim.bo[props.buf].modified then
-          filename = "[+] " .. filename
-        end
-
-        local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-        return { { icon, guifg = color }, { " " }, { filename } }
+        local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
+        local modified = vim.bo[props.buf].modified
+        local buffer = {
+          ft_icon and { " ", ft_icon, " ", guibg = ft_color, guifg = helpers.contrast_color(ft_color) }
+          or "",
+          " ",
+          { filename, gui = modified and "bold,italic" or "bold" },
+          " ",
+          guibg = "#363944",
+        }
+        return buffer
       end,
     })
   end,

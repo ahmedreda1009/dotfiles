@@ -20,16 +20,30 @@ return {
       require("luasnip.loaders.from_vscode").lazy_load()
 
       local function border(hl_name)
+        -- ┌──────┐
+        -- └──────┘
+
         return {
-          { "╭", hl_name },
+          { "┌", hl_name },
           { "─", hl_name },
-          { "╮", hl_name },
+          { "┐", hl_name },
           { "│", hl_name },
-          { "╯", hl_name },
+          { "┘", hl_name },
           { "─", hl_name },
-          { "╰", hl_name },
+          { "└", hl_name },
           { "│", hl_name },
         }
+
+        -- return {
+        --   { "╭", hl_name },
+        --   { "─", hl_name },
+        --   { "╮", hl_name },
+        --   { "│", hl_name },
+        --   { "╯", hl_name },
+        --   { "─", hl_name },
+        --   { "╰", hl_name },
+        --   { "│", hl_name },
+        -- }
       end
 
       local cmp_ui = {
@@ -147,7 +161,26 @@ return {
       -- vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#16161E" })
       -- vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = "#282A36" })
 
-      vim.api.nvim_set_hl(0, "CmpSel", { bg = "#fab387", fg = "#16161E" })
+      local mocha = {
+        base = "#1e1e2f",
+        surface0 = "#313244",
+        surface1 = "#45475a",
+        surface2 = "#585b70",
+        overlay0 = "#6c7086",
+        overlay1 = "#7f849c",
+        overlay2 = "#9399b2",
+        text = "#cdd6f4",
+        lavender = "#b4befe",
+        flamingo = "#f2cdcd",
+        yellow = "#f9e2af",
+        red = "#f38ba8",
+        green = "#a6e3a1",
+        blue = "#89b4fa",
+        pink = "#f5c2e7",
+        peach = "#fab387",
+      }
+
+      vim.api.nvim_set_hl(0, "CmpSel", { bg = mocha.green, fg = "#16161E" })
       vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#1e1e2f" })
       vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#1e1e2f" })
       vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#1e1e2f" })
