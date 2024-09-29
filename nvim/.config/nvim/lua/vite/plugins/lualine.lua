@@ -108,7 +108,18 @@ return {
             no_harpoon = "󰎡",
           },
         },
-        lualine_x = { "diff", "diagnostics", "lsp_progress", "filetype", "location", "progress" },
+        lualine_x = { "diff", "diagnostics", "lsp_progress", "filetype", "location", "progress",
+          {
+            require("noice").api.status.command.get,
+            cond = require("noice").api.status.command.has,
+            color = { fg = "#ff9e64" },
+          },
+          {
+            require("noice").api.status.search.get,
+            cond = require("noice").api.status.search.has,
+            color = { fg = "#ff9e64" },
+          }
+        },
         -- lualine_x = { "tabnine", "diff", "diagnostics", "lsp_progress", "filename", },
         lualine_y = { {
           function() return ' ' end,
