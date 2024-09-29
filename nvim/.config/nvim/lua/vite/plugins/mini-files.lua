@@ -88,17 +88,17 @@ return {
     --   highlight MiniFilesNormal guibg=#1e1e2f
     -- ]])
     vim.cmd([[
-      highlight MiniFilesTitleFocused guibg=#F8BD96 guifg=#1E1E2E gui=bold
-      "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#1E1E2E gui=bold
+      highlight MiniFilesTitleFocused guibg=#F8BD96 guifg=#181825 gui=bold
+      "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#181825 gui=bold
       highlight MiniFilesTitle guifg=#F8BD96 gui=bold
-      "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#1E1E2E gui=bold
+      "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#181825 gui=bold
       highlight MiniFilesBorder guifg=#F8BD96
       highlight MiniFilesBorderModified guifg=#F38BA8
       "highlight MiniFilesCursorLine guibg=#D9E6F2
-      "highlight MiniFilesDirectory guibg=#F5C2E7 guifg=#1E1E2E gui=bold
-      "highlight MiniFilesFile guibg=#1E1E2E guifg=#C3BAC6
-      "highlight MiniFilesNormal guibg=#1E1E2E guifg=#F8BD96
-      highlight MiniFilesNormal guibg=#1E1E2E
+      "highlight MiniFilesDirectory guibg=#F5C2E7 guifg=#181825 gui=bold
+      "highlight MiniFilesFile guibg=#181825 guifg=#C3BAC6
+      "highlight MiniFilesNormal guibg=#181825 guifg=#F8BD96
+      highlight MiniFilesNormal guibg=#181825
     ]])
 
     -- * `MiniFilesBorder` - border of regular windows.

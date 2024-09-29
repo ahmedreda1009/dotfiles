@@ -6,6 +6,30 @@ require("vite.lazy")
 -- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffda7b", bold = true })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#fab387", bold = true })
 
+-- vim.cmd [[
+-- " WhichKey Customization (Catppuccin style with custom background)
+-- highlight WhichKeyFloat guibg=#181726
+-- highlight WhichKey guifg=#fab387  " Peach color for keys
+-- highlight WhichKeyGroup guifg=#b4befe  " Lavender for groups
+-- highlight WhichKeySeparator guifg=#f2d5cf  " Rosewater for separators
+--
+-- " mini.files Customization
+-- highlight MiniFilesNormal guibg=#181726 guifg=#cba6f7  " Mauve for text
+-- highlight MiniFilesBorder guifg=#b4befe guibg=#181726  " Lavender for borders
+-- highlight MiniFilesDirectory guifg=#94e2d5  " Teal for directories
+--
+-- " Telescope Customization
+-- highlight TelescopeNormal guibg=#181726 guifg=#f2d5cf  " Rosewater for text
+-- highlight TelescopeBorder guifg=#b4befe guibg=#181726  " Lavender for borders
+-- highlight TelescopePromptNormal guibg=#1f1d2e guifg=#ffffff  " Slightly different bg for prompt
+-- highlight TelescopeSelection guibg=#282737 guifg=#f9e2af  " Yellow for selection
+--
+-- " Harpoon Customization
+-- highlight HarpoonWindow guibg=#181726 guifg=#f2d5cf  " Rosewater for text
+-- highlight HarpoonBorder guifg=#b4befe guibg=#181726  " Lavender for borders
+-- highlight HarpoonFile guibg=#282737 guifg=#fab387  " Peach for selected files
+-- ]]
+
 -- tabnine config
 require("tabnine").setup({
   disable_auto_comment = true,

@@ -29,6 +29,7 @@ return {
             "--line-number",
             "--column",
             "--smart-case",
+            'fd', '--type', 'f', '--hidden', '--follow', '--no-ignore'
           },
           prompt_prefix = "   ",
           selection_caret = " ",
@@ -97,10 +98,14 @@ return {
       -- load_extension, somewhere after setup function:
       require('telescope').load_extension('fzf')
 
+      require("telescope").load_extension("notify")
+
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>ff", function()
         require('mini.files').close()
-        builtin.find_files()
+        builtin.find_files({
+          find_command = { 'rg', '--files', '--hidden' }
+        })
       end, { desc = "[f]ind files" })
       vim.keymap.set("n", "<leader>fg", function()
         require('mini.files').close()
@@ -124,21 +129,21 @@ return {
       end, { desc = "Find todos" })
 
       vim.cmd([[
-        highlight TelescopeBorder guifg=#414868 guibg=#16161e
-        highlight TelescopePromptBorder guifg=#414868 guibg=#303041
-        highlight TelescopeResultsBorder guifg=#414868 guibg=#16161e
-        highlight TelescopePreviewBorder guifg=#414868 guibg=#16161e
-        highlight TelescopePreviewTitle guibg=#9ece6a guifg=#16161e
-        highlight TelescopePreviewNormal guibg=#16161e guifg=#16161e
-        highlight TelescopePromptNormal guifg=#c0caf5 guibg=#303041
-        highlight TelescopePromptPrefix guifg=#e0af68 guibg=#303041
-        highlight TelescopeNormal guifg=#a9b1d6 guibg=#16161e
-        highlight TelescopePromptTitle guibg=#DF6B74 guifg=#16161e
-        highlight TelescopeResultsTitle guibg=#7aa2f7 guifg=#16161e
-        highlight TelescopeResultsNormal guibg=#16161e guifg=#ffffff
-        highlight TelescopeSelection guifg=#e0af68 guibg=#303041
-        highlight TelescopeMatching guifg=#e0af68 guibg=#16161e
-      ]])
+  highlight TelescopeBorder guifg=#A6ADC8 guibg=#181726
+  highlight TelescopePromptBorder guifg=#A6ADC8 guibg=#303041
+  highlight TelescopeResultsBorder guifg=#A6ADC8 guibg=#181726
+  highlight TelescopePreviewBorder guifg=#A6ADC8 guibg=#181726
+  highlight TelescopePreviewTitle guibg=#F5C2E7 guifg=#181726
+  highlight TelescopePreviewNormal guibg=#181726 guifg=#C3BAC6
+  highlight TelescopePromptNormal guifg=#F5C2E7 guibg=#303041
+  highlight TelescopePromptPrefix guifg=#F8BD96 guibg=#303041
+  highlight TelescopeNormal guifg=#C3BAC6 guibg=#181726
+  highlight TelescopePromptTitle guibg=#F5C2E7 guifg=#181726
+  highlight TelescopeResultsTitle guibg=#7aa2f7 guifg=#181726
+  highlight TelescopeResultsNormal guibg=#181726 guifg=#C3BAC6
+  highlight TelescopeSelection guifg=#F8BD96 guibg=#303041
+  highlight TelescopeMatching guifg=#F8BD96 guibg=#181726
+]])
     end,
   },
   {

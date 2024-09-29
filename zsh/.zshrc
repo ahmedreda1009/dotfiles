@@ -10,6 +10,8 @@ export HELIX_RUNTIME=~/src/helix/runtime
 
 KEYTIMEOUT=1
 
+# Enable true color support in the terminal
+export TERM=xterm-256color
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,

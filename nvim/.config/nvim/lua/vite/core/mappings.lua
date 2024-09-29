@@ -52,3 +52,4 @@ map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", { noremap = true, silent = t
 
 -- auto-save toggle
 map("n", "<leader>n", ":ASToggle<CR>", { desc = "Toggle Auto Save" })
+
