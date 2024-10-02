@@ -5,17 +5,17 @@ return {
   config = function()
     local my_custom_theme = {
       normal = {
-        a = { bg = "#02f1f5", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
+        a = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- vibrant gray
         -- a = { bg = "#7aa2f7", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
         b = { bg = "#474747", fg = "#ffffff", gui = "bold" }, -- darker gray
         c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
-        z = { bg = "#02f1f5", fg = "#1a1b26", gui = "bold" }, -- light gray
+        z = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       insert = {
-        a = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- vibrant gray
+        a = { bg = "#ff5555", fg = "#1a1b26", gui = "bold" }, -- vibrant red
         b = { bg = "#474747", fg = "#ffffff", gui = "bold" }, -- darker gray
         c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
-        z = { bg = "#a9ff68", fg = "#1a1b26", gui = "bold" }, -- light gray
+        z = { bg = "#ff5555", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       visual = {
         a = { bg = "#ff61ef", fg = "#1a1b26", gui = "bold" }, -- vibrant purple
@@ -30,10 +30,10 @@ return {
         z = { bg = "#ffda7b", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       replace = {
-        a = { bg = "#ff5555", fg = "#1a1b26", gui = "bold" }, -- vibrant red
+        a = { bg = "#02f1f5", fg = "#1a1b26", gui = "bold" }, -- vibrant blue
         b = { bg = "#474747", fg = "#ffffff", gui = "bold" }, -- darker gray
         c = { bg = "#1a1b26", fg = "#ffffff", gui = "bold" }, -- light gray
-        z = { bg = "#ff5555", fg = "#1a1b26", gui = "bold" }, -- light gray
+        z = { bg = "#02f1f5", fg = "#1a1b26", gui = "bold" }, -- light gray
       },
       inactive = {
         a = { bg = "#44475a", fg = "#6272a4", gui = "bold" }, -- gray

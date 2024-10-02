@@ -6,5 +6,5 @@ return {
     render = "compact",
   },
 
-  vim.keymap.set("n", "<leader>mh", "<cmd>Telescope notify<CR><esc>", { desc = "Show notifications history" })
+  vim.keymap.set("n", "<leader>ms", "<cmd>Telescope notify<CR><esc>", { desc = "Show notifications history" })
 }
