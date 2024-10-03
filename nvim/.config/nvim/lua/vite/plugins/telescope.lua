@@ -5,6 +5,9 @@ return {
     event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      local actions = require('telescope.actions')
+      local action_state = require('telescope.actions.state')
+
       require("telescope").setup({
         extensions = {
           fzf = {
@@ -80,8 +83,11 @@ return {
         },
         pickers = {
           buffers = {
-            initial_mode = "normal", -- Set initial_mode to normal for buffers search
+            initial_mode = "normal",      -- Set initial_mode to normal for buffers search
             prompt_title = " Buffers",
+            sort_mru = true,              -- Sort by most recently used
+            ignore_current_buffer = true, -- Ignore the current buffer in the listing
+            sorter = require('telescope.sorters').get_substr_matcher(),
           },
           find_files = {
             -- theme = "dropdown",
@@ -135,10 +141,11 @@ return {
   highlight TelescopePreviewBorder guifg=#A6ADC8 guibg=#181726
   highlight TelescopePreviewTitle guibg=#F5C2E7 guifg=#181726
   highlight TelescopePreviewNormal guibg=#181726 guifg=#C3BAC6
-  highlight TelescopePromptNormal guifg=#F5C2E7 guibg=#303041
+  "highlight TelescopePromptNormal guifg=#F5C2E7 guibg=#303041
+  highlight TelescopePromptNormal guifg=#F8BD96 guibg=#303041
   highlight TelescopePromptPrefix guifg=#F8BD96 guibg=#303041
   highlight TelescopeNormal guifg=#C3BAC6 guibg=#181726
-  highlight TelescopePromptTitle guibg=#F5C2E7 guifg=#181726
+  highlight TelescopePromptTitle guibg=#F8BD96 guifg=#181726
   highlight TelescopeResultsTitle guibg=#7aa2f7 guifg=#181726
   highlight TelescopeResultsNormal guibg=#181726 guifg=#C3BAC6
   highlight TelescopeSelection guifg=#F8BD96 guibg=#303041
