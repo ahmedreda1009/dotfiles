@@ -6,7 +6,7 @@ window_root "/Users/ahmedreda/Documents/Folders/Projects/Fos7a/Front/"
 # layout file name.
 new_window "Fos7a-Front"
 split_v 20
-run_cmd "npm start"
+run_cmd "npm run dev"
 select_pane 1
 run_cmd "nvim ."
 
