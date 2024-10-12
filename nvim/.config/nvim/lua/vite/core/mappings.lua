@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 -- gerneral
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", ";", ":", { desc = "command" })
-map("i", "jf", "<ESC>")
+-- map("i", "jf", "<ESC>")
 
 local discipline = require('vite.configs.discipline')
 discipline.cowboy()
@@ -52,3 +52,5 @@ map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", { noremap = true, silent = t
 
 -- auto-save toggle
 map("n", "<leader>n", ":ASToggle<CR>", { desc = "Toggle Auto Save" })
+
+vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Rain!" })
