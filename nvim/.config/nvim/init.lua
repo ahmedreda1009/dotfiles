@@ -6,6 +6,12 @@ require("vite.lazy")
 -- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffda7b", bold = true })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#fab387", bold = true })
 
+-- overriding the filetype detection in Neovim, treat typescriptreact as tsx etc...
+vim.cmd [[
+  au BufRead,BufNewFile *.tsx set filetype=tsx
+  au BufRead,BufNewFile *.jsx set filetype=javascript
+]]
+
 -- vim.cmd [[
 -- " WhichKey Customization (Catppuccin style with custom background)
 -- highlight WhichKeyFloat guibg=#181726

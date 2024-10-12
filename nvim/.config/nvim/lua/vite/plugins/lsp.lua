@@ -9,7 +9,8 @@ return {
       require("mason").setup()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "tsserver",
+          -- "tsserver", -- this is the old name for ts server
+          "ts_ls", -- this is the new name for ts server
           "lua_ls",
           "cssls",
           "graphql",
@@ -86,7 +87,8 @@ return {
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-      lspconfig.tsserver.setup({
+      -- ts_ls is the new name for tsserver
+      lspconfig.ts_ls.setup({
         -- on_attach = attach
         capabilities = capabilities,
       })

@@ -53,4 +53,4 @@ map("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<CR>", { noremap = true, silent = t
 -- auto-save toggle
 map("n", "<leader>n", ":ASToggle<CR>", { desc = "Toggle Auto Save" })
 
-vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Rain!" })
+vim.keymap.set("n", "<leader>fl", "<cmd>CellularAutomaton make_it_rain<CR>", { desc = "Rain!" })

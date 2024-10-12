@@ -1,9 +1,13 @@
 return {
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",
     event = "VeryLazy",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      'nvim-telescope/telescope-fzf-native.nvim'
+    },
     config = function()
       local actions = require('telescope.actions')
       local action_state = require('telescope.actions.state')
@@ -32,8 +36,28 @@ return {
             "--line-number",
             "--column",
             "--smart-case",
-            'fd', '--type', 'f', '--hidden', '--follow', '--no-ignore'
           },
+          -- vimgrep_arguments = {
+          --   "--color=always"
+          -- },
+          -- vimgrep_arguments = {
+          --   "grep",
+          --   "-nH",                         -- Display line numbers and filenames
+          --   "--color=always",              -- Enable colored output
+          --   "--exclude-dir={.git,node_modules}", -- Exclude certain directories
+          --   "-i",                          -- Ignore case
+          -- },
+          -- vimgrep_arguments = {
+          --   "rg",
+          --   "-L",
+          --   "--color=never",
+          --   "--no-heading",
+          --   "--with-filename",
+          --   "--line-number",
+          --   "--column",
+          --   "--smart-case",
+          --   'fd', '--type', 'f', '--hidden', '--follow', '--no-ignore'
+          -- },
           prompt_prefix = "   ",
           selection_caret = " ",
           entry_prefix = "  ",
@@ -91,11 +115,16 @@ return {
           },
           find_files = {
             -- theme = "dropdown",
-            prompt_title = "󰩉 Find Files",
+            prompt_title = "󰩉 Files",
           },
           grep_string = {
             initial_mode = "normal", -- Set initial_mode to normal for
             prompt_title = "Word Under Cursor",
+          },
+          live_grep = {
+            initial_mode = "insert", -- Set initial_mode to normal for
+            prompt_title = "Search Word",
+            additional_args = { "--vimgrep" },
           }
         },
       })
@@ -116,7 +145,7 @@ return {
       vim.keymap.set("n", "<leader>fg", function()
         require('mini.files').close()
         builtin.live_grep()
-      end, { desc = "[l]ive grep" })
+      end, { desc = "[g]rep live" })
       vim.keymap.set("n", "<leader><leader>", function()
         require('mini.files').close()
         builtin.buffers()
