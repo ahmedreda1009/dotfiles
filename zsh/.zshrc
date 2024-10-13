@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH="/opt/homebrew/bin:$PATH"
@@ -134,6 +134,8 @@ if type brew &>/dev/null; then
 fi
 
 export EDITOR=nvim
+
+alias n="nvim"
 
 alias mongo="mongod --dbpath ~/data/db"
 
