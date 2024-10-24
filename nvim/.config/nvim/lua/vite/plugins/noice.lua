@@ -47,7 +47,8 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>md", function() require("noice").cmd("dismiss") end, { desc = "Dismiss All messages" })
+      -- vim.keymap.set("n", "<leader>md", function() require("noice").cmd("dismiss") end, { desc = "Dismiss All messages" })
+      vim.keymap.set("n", "-", function() require("noice").cmd("dismiss") end, { desc = "Dismiss All messages" })
     end,
     keys = {
       -- { "<leader>dm", function() require("noice").cmd("dismiss") end, desc = "Dismiss All messages" },

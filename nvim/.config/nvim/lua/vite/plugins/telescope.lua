@@ -84,7 +84,9 @@ return {
           generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
           path_display = { "truncate" },
           -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+          -- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└", },
+          borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗", },
+          -- borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
           color_devicons = true,
           set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
           file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -164,21 +166,20 @@ return {
       end, { desc = "Find todos" })
 
       vim.cmd([[
-  highlight TelescopeBorder guifg=#A6ADC8 guibg=#181726
-  highlight TelescopePromptBorder guifg=#A6ADC8 guibg=#303041
-  highlight TelescopeResultsBorder guifg=#A6ADC8 guibg=#181726
-  highlight TelescopePreviewBorder guifg=#A6ADC8 guibg=#181726
-  highlight TelescopePreviewTitle guibg=#F5C2E7 guifg=#181726
-  highlight TelescopePreviewNormal guibg=#181726 guifg=#C3BAC6
-  "highlight TelescopePromptNormal guifg=#F5C2E7 guibg=#303041
-  highlight TelescopePromptNormal guifg=#F8BD96 guibg=#303041
-  highlight TelescopePromptPrefix guifg=#F8BD96 guibg=#303041
-  highlight TelescopeNormal guifg=#C3BAC6 guibg=#181726
-  highlight TelescopePromptTitle guibg=#F8BD96 guifg=#181726
-  highlight TelescopeResultsTitle guibg=#7aa2f7 guifg=#181726
-  highlight TelescopeResultsNormal guibg=#181726 guifg=#C3BAC6
-  highlight TelescopeSelection guifg=#F8BD96 guibg=#303041
-  highlight TelescopeMatching guifg=#F8BD96 guibg=#181726
+  highlight TelescopeBorder guifg=#2DD4BF guibg=#181726          " Vibrant teal for border
+  highlight TelescopePromptBorder guifg=#2DD4BF guibg=#181726
+  highlight TelescopeResultsBorder guifg=#2DD4BF guibg=#181726
+  highlight TelescopePreviewBorder guifg=#2DD4BF guibg=#181726
+  highlight TelescopePreviewTitle guibg=#F8BBD0 guifg=#181726   " Softer pink for preview title
+  highlight TelescopePreviewNormal guibg=#181726 guifg=#E2E2E3   " Lighter text for preview
+  highlight TelescopePromptNormal guifg=#FF9F43 guibg=#181726    " Bright orange for prompt text
+  highlight TelescopePromptPrefix guifg=#FF9F43 guibg=#181726    " Matching prompt prefix
+  highlight TelescopeNormal guifg=#E2E2E3 guibg=#181726          " General text lightened
+  highlight TelescopePromptTitle guibg=#FF9F43 guifg=#181726     " Bright orange for prompt title
+  highlight TelescopeResultsTitle guibg=#81A1C1 guifg=#181726     " Cool blue for results title
+  highlight TelescopeResultsNormal guibg=#181726 guifg=#E2E2E3   " Results text lightened
+  highlight TelescopeSelection guifg=#FF9F43 guibg=#303041        " Bright orange selection with a slightly lighter dark background
+  highlight TelescopeMatching guifg=#FF9F43 guibg=#181726         " Bright orange for matched items
 ]])
     end,
   },
@@ -194,7 +195,9 @@ return {
               -- even more opts
               border = {},
               -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-              borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+              -- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└", },
+              borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗", },
+              -- borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
               initial_mode = "normal"
             }),
 

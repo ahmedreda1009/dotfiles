@@ -13,6 +13,8 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 map('n', 'r', '<C-r>', { desc = "Redo with just R" })
 
+map('n', '<leader>rh','<cmd>e!<cr>', { desc = "Refresh Current Buffer" })
+
 -- window management
 map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
 map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
