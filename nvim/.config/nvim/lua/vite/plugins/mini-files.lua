@@ -145,6 +145,7 @@ return {
       callback = function(args)
         local buf_id = args.data.buf_id
         vim.keymap.set('n', 'h', custom_go_out, { buffer = buf_id })
+        vim.keymap.set('n', "<Esc>", MiniFiles.close, { buffer = buf_id })
       end,
     })
   end,
