@@ -22,7 +22,7 @@ return {
         preview = true,
         width_preview = 50,
       },
-      content = { prefix = my_prefix }
+      content = { prefix = my_prefix },
     })
 
     -- Function to toggle mini.files
@@ -52,7 +52,7 @@ return {
         -- Customize window-local settings
         vim.wo[win_id].winblend = 0
         local config = vim.api.nvim_win_get_config(win_id)
-        config.border, config.title_pos = 'single', 'center'
+        config.border, config.title_pos = 'double', 'left'
         vim.api.nvim_win_set_config(win_id, config)
       end,
     })
@@ -88,11 +88,11 @@ return {
     --   highlight MiniFilesNormal guibg=#1e1e2f
     -- ]])
     vim.cmd([[
-      highlight MiniFilesTitleFocused guibg=#F8BD96 guifg=#181825 gui=bold
+      highlight MiniFilesTitleFocused guibg=#2DD4BF guifg=#181825 gui=bold
       "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#181825 gui=bold
-      highlight MiniFilesTitle guifg=#F8BD96 gui=bold
+      highlight MiniFilesTitle guifg=#2DD4BF gui=bold
       "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#181825 gui=bold
-      highlight MiniFilesBorder guifg=#F8BD96
+      highlight MiniFilesBorder guifg=#2DD4BF
       highlight MiniFilesBorderModified guifg=#F38BA8
       "highlight MiniFilesCursorLine guibg=#D9E6F2
       "highlight MiniFilesDirectory guibg=#F5C2E7 guifg=#181825 gui=bold
