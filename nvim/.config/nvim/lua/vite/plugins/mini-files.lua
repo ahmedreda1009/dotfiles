@@ -94,8 +94,9 @@ return {
       "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#181825 gui=bold
       highlight MiniFilesBorder guifg=#2DD4BF
       highlight MiniFilesBorderModified guifg=#F38BA8
-      "highlight MiniFilesCursorLine guibg=#D9E6F2
-      "highlight MiniFilesDirectory guibg=#F5C2E7 guifg=#181825 gui=bold
+      highlight MiniFilesCursorLine guibg=#2DD4BF guifg=#181825
+      "highlight MiniFilesDirectory guifg=#2DD4BF gui=bold
+      highlight MiniFilesDirectory guifg=#ffffff gui=bold
       "highlight MiniFilesFile guibg=#181825 guifg=#C3BAC6
       "highlight MiniFilesNormal guibg=#181825 guifg=#F8BD96
       highlight MiniFilesNormal guibg=#181825

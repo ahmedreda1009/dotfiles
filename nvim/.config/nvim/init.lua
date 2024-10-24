@@ -12,6 +12,13 @@ vim.cmd [[
   au BufRead,BufNewFile *.jsx set filetype=javascript
 ]]
 
+vim.cmd([[
+  "highlight NormalFloat guifg=#2DD4BF
+  highlight FloatBorder guifg=#2DD4BF
+  "highlight FloatBorder guifg=#2DD4BF guibg=#181825
+  "highlight FloatBorder guifg=#2DD4BF guibg=#1e1e2e
+]])
+
 -- vim.cmd [[
 -- " WhichKey Customization (Catppuccin style with custom background)
 -- highlight WhichKeyFloat guibg=#181726

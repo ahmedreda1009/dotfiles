@@ -22,16 +22,16 @@ return {
       local function border(hl_name)
         -- ┌──────┐
         -- └──────┘
-
+        -- borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗", },
         return {
-          { "┌", hl_name },
-          { "─", hl_name },
-          { "┐", hl_name },
-          { "│", hl_name },
-          { "┘", hl_name },
-          { "─", hl_name },
-          { "└", hl_name },
-          { "│", hl_name },
+          { "┏", hl_name },
+          { "━", hl_name },
+          { "┓", hl_name },
+          { "┃", hl_name },
+          { "┛", hl_name },
+          { "━", hl_name },
+          { "┗", hl_name },
+          { "┃", hl_name },
         }
 
         -- return {
@@ -174,17 +174,20 @@ return {
         flamingo = "#f2cdcd",
         yellow = "#f9e2af",
         red = "#f38ba8",
-        green = "#a6e3a1",
+        -- green = "#a6e3a1",
+        green = "#2DD4BF",
         blue = "#89b4fa",
         pink = "#f5c2e7",
         peach = "#fab387",
       }
 
       vim.api.nvim_set_hl(0, "CmpSel", { bg = mocha.green, fg = "#16161E" })
-      vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#1e1e2f" })
-      vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#1e1e2f" })
-      vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#1e1e2f" })
-      vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = "#1e1e2f" })
+      -- vim.api.nvim_set_hl(0, "CmpPmenu", { bg = "#1e1e2f" })
+      -- vim.api.nvim_set_hl(0, "CmpDoc", { bg = "#1e1e2f" })
+      vim.api.nvim_set_hl(0, "CmpPmenuBorder", { bg = "#1e1e2f", fg = mocha.green })
+      vim.api.nvim_set_hl(0, "CmpDocBorder", { bg = "#1e1e2f", fg = mocha.green })
+      vim.api.nvim_set_hl(0, "CmpBorder", { fg = mocha.green })
+      vim.api.nvim_set_hl(0, "mpDocBorder", { fg = mocha.green })
     end,
   },
 }
