@@ -112,6 +112,9 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# run gcc 17 as default instead of 98
+alias g++="g++ -std=c++17"
+
 export PATH="/opt/homebrew/bin:$PATH"
 
 
