@@ -19,6 +19,7 @@ return {
           "tailwindcss",
           "eslint",
           "angularls",
+          "clangd",
           -- "Svelte",
           -- "nginx_language_server",
           -- "htmx",
@@ -133,6 +134,10 @@ return {
         capabilities = capabilities,
       })
       lspconfig.cssmodules_ls.setup({
+        -- on_attach = attach
+        capabilities = capabilities,
+      })
+      lspconfig.clangd.setup({
         -- on_attach = attach
         capabilities = capabilities,
       })
