@@ -88,15 +88,16 @@ return {
     --   highlight MiniFilesNormal guibg=#1e1e2f
     -- ]])
     vim.cmd([[
-      highlight MiniFilesTitleFocused guifg=#2DD4BF gui=bold
+      highlight MiniFilesTitleFocused guifg=#89b4fb gui=bold
       "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#181825 gui=bold
       highlight MiniFilesTitle guifg=#585b70 gui=bold
       "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#181825 gui=bold
-      highlight MiniFilesBorder guifg=#2DD4BF
+      "highlight MiniFilesBorder guifg=#2DD4BF
+      highlight MiniFilesBorder guifg=#89b4fb
       highlight MiniFilesBorderModified guifg=#F38BA8
-      highlight MiniFilesCursorLine guibg=#2DD4BF guifg=#181825
+      highlight MiniFilesCursorLine guibg=#f4e0dc guifg=#181825
       "highlight MiniFilesDirectory guifg=#2DD4BF gui=bold
-      highlight MiniFilesDirectory guifg=#ffffff gui=bold
+      "highlight MiniFilesDirectory guifg=#ffffff gui=bold
       "highlight MiniFilesFile guibg=#181825 guifg=#C3BAC6
       "highlight MiniFilesNormal guibg=#181825 guifg=#F8BD96
       highlight MiniFilesNormal guibg=#181825
