@@ -148,6 +148,8 @@ return {
         local buf_id = args.data.buf_id
         vim.keymap.set('n', 'h', custom_go_out, { buffer = buf_id })
         vim.keymap.set('n', "<Esc>", MiniFiles.close, { buffer = buf_id })
+        vim.keymap.set('n', "<cr>", "l", { buffer = buf_id, remap = true })
+        vim.keymap.set('n', "l", "L", { buffer = buf_id, remap = true })
       end,
     })
   end,

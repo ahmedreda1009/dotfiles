@@ -66,6 +66,7 @@ return {
           sorting_strategy = "descending",
           -- sorting_strategy = "ascending",
           layout_strategy = "horizontal",
+          -- layout_strategy = "vertical",
           layout_config = {
             horizontal = {
               -- prompt_position = "top",
@@ -74,6 +75,8 @@ return {
             },
             vertical = {
               mirror = false,
+              preview_width = 0.5,
+              results_width = 0.5,
             },
             -- width = 0.87,
             -- height = 0.80,
@@ -170,17 +173,17 @@ return {
         highlight TelescopePromptBorder guifg=#2DD4BF guibg=#181726
         highlight TelescopeResultsBorder guifg=#2DD4BF guibg=#181726
         highlight TelescopePreviewBorder guifg=#2DD4BF guibg=#181726
-        highlight TelescopePreviewTitle guibg=#F8BBD0 guifg=#181726   " Softer pink for preview title
+        highlight TelescopePreviewTitle guibg=#2DD4BF guifg=#181726   " Softer pink for preview title
         highlight TelescopePreviewNormal guibg=#181726 guifg=#E2E2E3   " Lighter text for preview
         highlight TelescopePromptNormal guifg=#FF9F43 guibg=#181726    " Bright orange for prompt text
-        highlight TelescopePromptPrefix guifg=#FF9F43 guibg=#181726    " Matching prompt prefix
+        highlight TelescopePromptPrefix guifg=#2DD4BF guibg=#181726    " Matching prompt prefix
         highlight TelescopeNormal guifg=#E2E2E3 guibg=#181726          " General text lightened
         highlight TelescopePromptTitle guibg=#2DD4BF guifg=#181726     " Bright orange for prompt title
-        highlight TelescopeResultsTitle guibg=#FF9F43 guifg=#181726     " Cool blue for results title
+        highlight TelescopeResultsTitle guibg=#2DD4BF guifg=#181726     " Cool blue for results title
         highlight TelescopeResultsNormal guibg=#181726 guifg=#E2E2E3   " Results text lightened
         "highlight TelescopeSelection guifg=#FF9F43 guibg=#303041        " Bright orange selection with a slightly lighter dark background
         highlight TelescopeSelection guifg=#181726 guibg=#f4e0dc        " Bright orange selection with a slightly lighter dark background
-        highlight TelescopeMatching guifg=#181726 guibg=#FF9F43         " Bright orange for matched items
+        highlight TelescopeMatching guifg=#181726 guibg=#2DD4BF         " Bright orange for matched items
       ]])
     end,
   },

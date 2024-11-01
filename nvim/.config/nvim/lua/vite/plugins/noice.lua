@@ -45,6 +45,11 @@ return {
           inc_rename = true,            -- enables an input dialog for inc-rename.nvim
           lsp_doc_border = true,        -- add a border to hover docs and signature help
         },
+        messages = {
+          enabled = true,
+          -- view = "notify",
+          timeout = 1000, -- Set the timeout in milliseconds (2000ms = 2 seconds)
+        },
       })
 
       -- vim.keymap.set("n", "<leader>md", function() require("noice").cmd("dismiss") end, { desc = "Dismiss All messages" })

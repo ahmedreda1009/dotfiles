@@ -1,7 +1,8 @@
 return {
   "rcarriga/nvim-notify",
   opts = {
-    timeout = 5000,
+    timeout = 2000,
+    stages = 'static',
     -- background_colour = "#000000",
     render = "compact",
   },
