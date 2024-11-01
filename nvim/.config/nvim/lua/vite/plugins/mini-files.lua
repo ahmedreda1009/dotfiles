@@ -7,7 +7,8 @@ return {
     local my_prefix = function(fs_entry)
       if fs_entry.fs_type == 'directory' then
         -- NOTE: it is usually a good idea to use icon followed by space
-        return ' ', 'MiniFilesDirectory'
+        -- return ' ', 'MiniFilesDirectory'
+        return ' ', 'MiniFilesDirectory'
       end
       return MiniFiles.default_prefix(fs_entry)
     end
