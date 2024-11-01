@@ -15,13 +15,20 @@ return {
 
     MiniFiles.setup({
       sync_current_file = true,
-      -- mappings = {
-      --   go_in = 'L',
-      --   go_in_plus = 'l',
-      -- },
+      mappings = {
+        go_in = 'L',
+        go_in_plus = 'l',
+      },
       windows = {
         preview = true,
-        width_preview = 50,
+        max_number = 5,
+        -- width_preview = 50,
+        -- Width of focused window
+        -- width_focus = 25,
+        -- -- Width of non-focused window
+        -- width_nofocus = 25,
+        -- -- Width of preview window
+        -- width_preview = 50,
       },
       content = { prefix = my_prefix },
     })
@@ -53,7 +60,7 @@ return {
         -- Customize window-local settings
         vim.wo[win_id].winblend = 0
         local config = vim.api.nvim_win_get_config(win_id)
-        config.border, config.title_pos = 'double', 'left'
+        config.border, config.title_pos = 'single', 'left'
         vim.api.nvim_win_set_config(win_id, config)
       end,
     })
@@ -68,8 +75,9 @@ return {
         local config = vim.api.nvim_win_get_config(args.data.win_id)
 
         -- Ensure fixed height
-        -- config.height = 10
-
+        config.height = 1000
+        -- config.width = 10
+        -- config.width = vim.o.columns
         -- Ensure title padding
         if config.title[#config.title][1] ~= ' ' then
           table.insert(config.title, { ' ', 'NormalFloat' })
@@ -149,7 +157,6 @@ return {
         vim.keymap.set('n', 'h', custom_go_out, { buffer = buf_id })
         vim.keymap.set('n', "<Esc>", MiniFiles.close, { buffer = buf_id })
         vim.keymap.set('n', "<cr>", "l", { buffer = buf_id, remap = true })
-        vim.keymap.set('n', "l", "L", { buffer = buf_id, remap = true })
       end,
     })
   end,
