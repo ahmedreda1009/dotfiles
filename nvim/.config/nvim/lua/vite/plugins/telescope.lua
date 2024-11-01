@@ -178,8 +178,9 @@ return {
   highlight TelescopePromptTitle guibg=#2DD4BF guifg=#181726     " Bright orange for prompt title
   highlight TelescopeResultsTitle guibg=#FF9F43 guifg=#181726     " Cool blue for results title
   highlight TelescopeResultsNormal guibg=#181726 guifg=#E2E2E3   " Results text lightened
-  highlight TelescopeSelection guifg=#FF9F43 guibg=#303041        " Bright orange selection with a slightly lighter dark background
-  highlight TelescopeMatching guifg=#FF9F43 guibg=#181726         " Bright orange for matched items
+  "highlight TelescopeSelection guifg=#FF9F43 guibg=#303041        " Bright orange selection with a slightly lighter dark background
+  highlight TelescopeSelection guifg=#181726 guibg=#f4e0dc        " Bright orange selection with a slightly lighter dark background
+  highlight TelescopeMatching guifg=#181726 guibg=#FF9F43         " Bright orange for matched items
 ]])
     end,
   },
