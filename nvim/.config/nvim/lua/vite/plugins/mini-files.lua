@@ -21,14 +21,14 @@ return {
       },
       windows = {
         preview = true,
-        max_number = 5,
-        -- width_preview = 50,
-        -- Width of focused window
-        -- width_focus = 25,
-        -- -- Width of non-focused window
-        -- width_nofocus = 25,
-        -- -- Width of preview window
-        -- width_preview = 50,
+        -- max_number = 5,
+        -- -- width_preview = 50,
+        -- -- Width of focused window
+        -- width_focus = 35,
+        -- -- -- Width of non-focused window
+        -- width_nofocus = 10,
+        -- -- -- Width of preview window
+        -- width_preview = 70,
       },
       content = { prefix = my_prefix },
     })
@@ -97,7 +97,7 @@ return {
     --   highlight MiniFilesNormal guibg=#1e1e2f
     -- ]])
     vim.cmd([[
-      highlight MiniFilesTitleFocused guifg=#89b4fb gui=bold
+      highlight MiniFilesTitleFocused guifg=#fab387 gui=bold
       "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#181825 gui=bold
       highlight MiniFilesTitle guifg=#585b70 gui=bold
       "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#181825 gui=bold
