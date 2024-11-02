@@ -48,7 +48,7 @@ return {
         messages = {
           enabled = true,
           -- view = "notify",
-          timeout = 1000, -- Set the timeout in milliseconds (2000ms = 2 seconds)
+          -- timeout = 1000, -- Set the timeout in milliseconds (2000ms = 2 seconds)
         },
       })
 
