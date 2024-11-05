@@ -130,6 +130,10 @@ return {
             initial_mode = "insert", -- Set initial_mode to normal for
             prompt_title = "Search Word",
             additional_args = { "--vimgrep" },
+          },
+          lsp_references = {
+            initial_mode = "normal", -- Set initial_mode to normal for
+            prompt_title = "LSP References",
           }
         },
       })
