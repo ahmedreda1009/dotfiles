@@ -9,7 +9,7 @@ return {
     require("incline").setup({
       highlight = {
         groups = {
-          InclineNormal = { guifg = "#ffffff" },
+          InclineNormal = { guifg = "#f4e0dc" },
           InclineNormalNC = { guifg = "#5b6891" },
         },
       },
@@ -28,8 +28,9 @@ return {
           " ",
           { filename, gui = modified and "bold,italic" or "bold" },
           " ",
-          guibg = "#f4e0dc",
-          guifg = "#181825",
+          guibg = '#44406e',
+          -- guibg = "#f4e0dc",
+          -- guifg = "#181825",
           -- guibg = "#363944",
         }
         return buffer

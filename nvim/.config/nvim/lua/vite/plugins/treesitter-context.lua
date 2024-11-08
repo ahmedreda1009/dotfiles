@@ -13,6 +13,8 @@ return {
       },
     }
 
+    vim.keymap.set("n", "<leader>tc", "<cmd>TSContextToggle<cr>", { desc = "Toggle Treesitter Context" })
+
     vim.cmd([[
       highlight TreesitterContextBottom gui=NONE
       highlight TreesitterContextLineNumberBottom gui=NONE

@@ -14,7 +14,7 @@ if initialize_session "VOIS"; then
   run_cmd "nvim ."
 
   new_window "ecare"
-  run_cmd "cd wf-ecare-app-6bf732ea3c5f146f82929a84db4916bd6205289d"
+  run_cmd "cd wf-ecare-app-develop"
   run_cmd "nvim ."
 
   # Load a defined window layout.
