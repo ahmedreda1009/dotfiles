@@ -10,9 +10,10 @@ return {
         null_ls.builtins.diagnostics.cpplint,
         null_ls.builtins.diagnostics.cpptools,
         null_ls.builtins.formatting.clang_format,
+        null_ls.builtins.diagnostics.djlint,
       },
     })
 
-    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {desc = "Apply Formatting"})
+    vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Apply Formatting" })
   end,
 }

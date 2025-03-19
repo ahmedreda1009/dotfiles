@@ -71,7 +71,7 @@ return {
             horizontal = {
               -- prompt_position = "top",
               preview_width = 0.5,
-              results_width = 0.5,
+              results_width = 0.4,
             },
             vertical = {
               mirror = false,

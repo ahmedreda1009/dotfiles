@@ -20,6 +20,7 @@ return {
           "eslint",
           "angularls",
           "clangd",
+          "glint",
           -- "Svelte",
           -- "nginx_language_server",
           -- "htmx",
@@ -138,6 +139,10 @@ return {
         capabilities = capabilities,
       })
       lspconfig.clangd.setup({
+        -- on_attach = attach
+        capabilities = capabilities,
+      })
+      lspconfig.glint.setup({
         -- on_attach = attach
         capabilities = capabilities,
       })

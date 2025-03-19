@@ -24,9 +24,9 @@ return {
         -- max_number = 5,
         -- -- width_preview = 50,
         -- -- Width of focused window
-        -- width_focus = 35,
+        width_focus = 35,
         -- -- -- Width of non-focused window
-        -- width_nofocus = 10,
+        width_nofocus = 10,
         -- -- -- Width of preview window
         -- width_preview = 70,
       },
@@ -75,7 +75,7 @@ return {
         local config = vim.api.nvim_win_get_config(args.data.win_id)
 
         -- Ensure fixed height
-        config.height = 1000
+        -- config.height = 1000
         -- config.width = 10
         -- config.width = vim.o.columns
         -- Ensure title padding
@@ -97,15 +97,17 @@ return {
     --   highlight MiniFilesNormal guibg=#1e1e2f
     -- ]])
     vim.cmd([[
-      highlight MiniFilesTitleFocused guifg=#fab387 gui=bold
+      "highlight MiniFilesTitleFocused guifg=#fab387 gui=bold
+      highlight MiniFilesTitleFocused guibg=#2DD4BF guifg=#1a1b26 gui=bold
       "highlight MiniFilesTitleFocused guibg=#F2D8A7 guifg=#181825 gui=bold
       highlight MiniFilesTitle guifg=#585b70 gui=bold
       "highlight MiniFilesTitle guibg=#F5C2E7 guifg=#181825 gui=bold
-      "highlight MiniFilesBorder guifg=#2DD4BF
-      highlight MiniFilesBorder guifg=#89b4fb
+      highlight MiniFilesBorder guifg=#2DD4BF
+      "highlight MiniFilesBorder guifg=#89b4fb
+      highlight MiniFilesBorderFocused guifg=#ffffff
       highlight MiniFilesBorderModified guifg=#F38BA8
       highlight MiniFilesCursorLine guibg=#f4e0dc guifg=#181825
-      "highlight MiniFilesDirectory guifg=#2DD4BF gui=bold
+      highlight MiniFilesDirectory guifg=#2DD4BF gui=bold
       "highlight MiniFilesDirectory guifg=#ffffff gui=bold
       "highlight MiniFilesFile guibg=#181825 guifg=#C3BAC6
       "highlight MiniFilesNormal guibg=#181825 guifg=#F8BD96
