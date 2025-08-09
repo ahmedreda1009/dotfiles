@@ -1,5 +1,5 @@
 return {
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', event = 'InsertEnter' },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.6",

@@ -1,15 +1,16 @@
-if true then
-  return {}
-end
+-- if true then
+--   return {}
+-- end
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",
   opts = {
     indent = {
-      -- char = "│",
+      char = "│",
       -- tab_char = "│",
-      char = "┃",
-      tab_char = "┃",
+      highlight = "IblIndent"
+      -- char = "┃",
+      -- tab_char = "┃",
       -- char = "▍",
       -- tab_char = "▍",
       -- char = "▌",
