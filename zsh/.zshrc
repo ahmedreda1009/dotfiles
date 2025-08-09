@@ -112,6 +112,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias gg="git g"
+
 # run gcc 17 as default instead of 98
 alias g++="g++ -std=c++17"
 
@@ -144,11 +146,11 @@ alias mongo="mongod --dbpath ~/data/db"
 
 alias ls="eza --icons --color=always"
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -175,3 +177,4 @@ alias clear="precmd() {precmd() {echo }} && clear"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

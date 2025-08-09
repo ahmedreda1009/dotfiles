@@ -17,37 +17,41 @@ symbol = ""
 
 [character]
 # success_symbol = "[❯](bold #7aa2f7)"
-success_symbol = "[❯](bold #2DD4BF)"
-error_symbol = "[❯](bold red)"
-vimcmd_symbol = "[❮](bold green)"
+# success_symbol = "[❯](bold #2DD4BF)"
+# error_symbol = "[❯](bold red)"
+# vimcmd_symbol = "[❮](bold green)"
 
 [cmd_duration]
 min_time = 0
 show_milliseconds = true
-style = "bold 12"
+# style = "bold 12"
+style = "bold #ffffff"
 
 [time]
 disabled = false
 use_12hr = true
 format = 'at[  $time ]($style)'
+style = "bold #E3ED8E"
 
 [git_status]
 format = "[$all_status]($style) "
 # format = "[$all_status$ahead_behind]($style) "
 # style = "bold green"
-style = "bold 210"
-conflicted = ''
-ahead = '↑'
-behind = '↓'
-diverged = '⇆'
-up_to_date = '✔'
-untracked = '…'
-stashed = '⧉'
-modified = '✎'
-staged = '★'
-renamed = '➜'
-deleted = '✘'
-
+# style = "bold 210"
+# style = "bold #D04EAF"
+style = "bold #DA4050"
+# conflicted = ''
+# ahead = '↑'
+# behind = '↓'
+# diverged = '⇆'
+# up_to_date = '✔'
+# untracked = '…'
+# stashed = '⧉'
+# modified = '✎'
+# staged = '★'
+# renamed = '➜'
+# deleted = '✘'
+#
 [aws]
 symbol = " "
 
@@ -71,7 +75,8 @@ read_only = " 󰌾"
 truncation_symbol = " "
 # style = "bold #d79921"
 # style = "bold #7aa2f7"
-style = "bold #2DD4BF"
+# style = "bold #2DD4BF"
+style = "bold #8EE5EC"
 # truncation_symbol = "~/"
 
 [docker_context]
@@ -90,8 +95,9 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
-style = "bold 210"
+# symbol = " "
+# style = "bold 210"
+style = "bold #D04EAF"
 
 # [git_metrics]
 
@@ -138,8 +144,8 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
-# symbol = " "
-symbol = "⬢ "
+symbol = " "
+# symbol = "⬢ "
 
 [ocaml]
 symbol = " "
