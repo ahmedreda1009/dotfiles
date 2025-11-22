@@ -1,3 +1,22 @@
+# Colors
+# #00CCA4
+# #00DFA2
+# #10B981
+# #2ecc71
+# #3DDC97
+# #0099CC
+# #0088FF
+# #4C9FFF
+# #8B5CF6
+# #A855F7
+# #7C3AED
+# ✓ #FF9F45
+# ✓ #FF7849
+# ✓ #FF6E4A
+# 🔹 #0099CC (blue)
+# 🔹 #8B5CF6 (purple)
+# 🔹 #FF7849 (orange-coral)
+
 # Tuck "new line" inside the ($all) variable
 format = """($all$time$cmd_duration
 )$character"""
@@ -16,13 +35,14 @@ symbol = ""
 # error_symbol = "[➜](bold 130)"
 
 [character]
-success_symbol = "[](bold #8EE5EC)"
+success_symbol = "[](bold #7C3AED)"
+# success_symbol = "[](bold #8EE5EC)"
+# success_symbol = "[](bold #26A269)"
 # success_symbol = "[❯](bold #7aa2f7)"
 # success_symbol = "[❯](bold #2DD4BF)"
 error_symbol = "[](bold red)"
 # error_symbol = "[❯](bold red)"
 # vimcmd_symbol = "[❮](bold green)"
-
 [cmd_duration]
 min_time = 0
 show_milliseconds = true
@@ -33,7 +53,8 @@ style = "bold #ffffff"
 disabled = false
 use_12hr = true
 format = 'at[  $time ]($style)'
-style = "bold #E3ED8E"
+style = "bold #ffffff"
+# style = "bold #E3ED8E"
 
 [git_status]
 format = "[$all_status]($style) "
@@ -75,10 +96,11 @@ symbol = " "
 [directory]
 read_only = " 󰌾"
 truncation_symbol = " "
+style = "bold #7C3AED"
 # style = "bold #d79921"
 # style = "bold #7aa2f7"
 # style = "bold #2DD4BF"
-style = "bold #8EE5EC"
+# style = "bold #8EE5EC"
 # truncation_symbol = "~/"
 
 [docker_context]
