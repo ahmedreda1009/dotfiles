@@ -1,6 +1,6 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-window_root "/Users/ahmedreda/Documents/Folders/Projects/Task-Management/Task-Management-React/"
+window_root "/media/ahmed/New Volume1/Dev/Projects/Task-Management/Task-Management-React/"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.

@@ -96,7 +96,7 @@ return {
 
     config = function()
       require("catppuccin").setup({
-        -- flavour = "mocha", -- latte, frappe, macchiato, mocha
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
         -- background = {     -- :h background
         --   light = "latte",
         --   dark = "mocha",
@@ -129,8 +129,8 @@ return {
         },
         color_overrides = {
           all = {
-            base = "#181825",
-            mantle = "#1e1e2e",
+            -- base = "#181825",
+            -- mantle = "#1e1e2e",
             -- return {
             -- 	rosewater = "#f5e0dc",
             -- 	flamingo = "#f2cdcd",
@@ -189,7 +189,7 @@ return {
       })
 
       -- setup must be called before loading
-      vim.cmd.colorscheme("catppuccin-mocha")
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
 

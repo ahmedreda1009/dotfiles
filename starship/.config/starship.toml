@@ -16,8 +16,10 @@ symbol = ""
 # error_symbol = "[➜](bold 130)"
 
 [character]
+success_symbol = "[](bold #8EE5EC)"
 # success_symbol = "[❯](bold #7aa2f7)"
 # success_symbol = "[❯](bold #2DD4BF)"
+error_symbol = "[](bold red)"
 # error_symbol = "[❯](bold red)"
 # vimcmd_symbol = "[❮](bold green)"
 

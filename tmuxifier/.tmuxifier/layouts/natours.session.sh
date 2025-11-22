@@ -1,13 +1,13 @@
 # Set a custom session root path. Default is `$HOME`.
 # Must be called before `initialize_session`.
-session_root "/Users/ahmedreda/Documents/Folders/Projects/natours"
+session_root "/home/ahmed/Documents/dev/natours-app"
 
 # Create session with specified name if it does not already exist. If no
 # argument is given, session name will be based on layout file name.
 if initialize_session "natours"; then
 
   # Create a new window inline within session layout definition.
-  new_window "natours-app"
+  new_window "natours"
   split_v 20
   run_cmd "npm run start"
   select_pane 1
