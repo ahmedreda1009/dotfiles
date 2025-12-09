@@ -108,6 +108,12 @@ return {
           anchor_dir = get_curr_dir()
           is_mini_files_explorer_open_event_triggered = true
         end
+
+        local entry = require("mini.files").get_fs_entry()
+        if not entry then return end
+
+        local dir = vim.fs.dirname(entry.path)
+        vim.cmd("cd " .. vim.fn.fnamemodify(dir, ":p"))
       end
     })
     -- Custom function to override go_out()

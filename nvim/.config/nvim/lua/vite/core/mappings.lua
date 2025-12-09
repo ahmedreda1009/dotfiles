@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 -- gerneral
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 map("n", ";", ":", { desc = "command" })
--- map("i", "jf", "<ESC>")
+map("i", "jf", "<ESC>")
 
 -- local discipline = require('vite.configs.discipline')
 -- discipline.cowboy()
