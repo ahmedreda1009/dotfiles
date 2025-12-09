@@ -1,14 +1,15 @@
 # Set window root path. Default is `$session_root`.
 # Must be called before `new_window`.
-window_root "/Users/ahmedreda/Documents/Folders/Projects/Fos7a/Back/"
+window_root "/home/ahmed/Documents/dev/fos7a-express-app"
 
 # Create new window. If no argument is given, window name will be based on
 # layout file name.
 new_window "Fos7a-Back"
-split_v 20
-run_cmd "npm start"
-select_pane 1
 run_cmd "nvim ."
+split_v 20
+run_cmd "npm run dev"
+split_h
+select_pane 1
 
 # Split window into panes.
 #split_v 20
