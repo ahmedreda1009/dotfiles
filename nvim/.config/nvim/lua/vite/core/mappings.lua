@@ -1,7 +1,17 @@
 local map = vim.keymap.set
 vim.g.mapleader = " "
 -- gerneral
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+-- map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+
+local function on_escape()
+  require("mini.map").refresh()
+end
+
+map('n', '<Esc>', function()
+  on_escape()
+  vim.cmd('noh')  -- clear search highlights
+  -- return vim.cmd('normal! <Esc>')
+end)
 map("n", ";", ":", { desc = "command" })
 map("i", "jf", "<ESC>")
 

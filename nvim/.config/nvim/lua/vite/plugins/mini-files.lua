@@ -108,12 +108,6 @@ return {
           anchor_dir = get_curr_dir()
           is_mini_files_explorer_open_event_triggered = true
         end
-
-        local entry = require("mini.files").get_fs_entry()
-        if not entry then return end
-
-        local dir = vim.fs.dirname(entry.path)
-        vim.cmd("cd " .. vim.fn.fnamemodify(dir, ":p"))
       end
     })
     -- Custom function to override go_out()
@@ -153,7 +147,7 @@ return {
     -- Highlight groups
     vim.cmd([[
       " Focused
-      highlight MiniFilesNormalFocused guibg=#1e1e1e guifg=#2DD4BF
+      highlight MiniFilesNormalFocused guibg=#1A1B26 guifg=#2DD4BF
       highlight MiniFilesBorderFocused guifg=#2DD4BF gui=bold
       highlight MiniFilesTitleFocused guifg=#2DD4BF guibg=#181825 gui=bold
       highlight MiniFilesDirectoryFocused guifg=#2DD4BF gui=bold
@@ -161,12 +155,12 @@ return {
       highlight MiniFilesCursorLineFocused guibg=#3a3a3a gui=bold
 
       " Unfocused
-      highlight MiniFilesNormalUnfocused guibg=#1a1a1a guifg=#a0a0a0
-      highlight MiniFilesBorderUnfocused guifg=#555555
-      highlight MiniFilesTitle guifg=#888888 guibg=#181825 gui=bold
-      highlight MiniFilesDirectoryUnfocused guifg=#888888 gui=bold
-      highlight MiniFilesFileUnfocused guifg=#888888 gui=bold
-      highlight MiniFilesCursorLineUnfocused guibg=#2a2a2a gui=bold
+      highlight MiniFilesNormalUnfocused      guibg=#1A1B26 guifg=#6c6c6c
+      highlight MiniFilesBorderUnfocused      guifg=#4b4b4b
+      highlight MiniFilesTitle                guifg=#6c6c6c guibg=#1f1f1f gui=bold
+      highlight MiniFilesDirectoryUnfocused   guifg=#7a7a7a gui=bold
+      highlight MiniFilesFileUnfocused        guifg=#8a8a8a gui=bold
+      highlight MiniFilesCursorLineUnfocused  guibg=#262626 gui=bold
     ]])
 
     -- Track focused window

@@ -3,34 +3,25 @@
 -- end
 return {
   "echasnovski/mini.indentscope",
-  version = false, -- wait till new 0.7.0 release to put it back on semver
-  event = "VeryLazy",
+  version = false,
+  event = "VeryLazy",  -- load lazily
   opts = {
-    -- symbol = "▏",
     symbol = "│",
     options = { try_as_border = true },
   },
   init = function()
+    -- Filetypes to disable
+    local disabled_ft = {
+      "Trouble","alpha","dashboard","fzf","help","lazy","mason",
+      "neo-tree","notify","sidekick_terminal","snacks_dashboard",
+      "snacks_notif","snacks_terminal","snacks_win","toggleterm",
+    }
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = {
-        "Trouble",
-        "alpha",
-        "dashboard",
-        "fzf",
-        "help",
-        "lazy",
-        "mason",
-        "neo-tree",
-        "notify",
-        "snacks_dashboard",
-        "snacks_notif",
-        "snacks_terminal",
-        "snacks_win",
-        "toggleterm",
-        "trouble",
-      },
+      pattern = "*",
       callback = function()
-        vim.b.miniindentscope_disable = true
+        if vim.tbl_contains(disabled_ft, vim.bo.filetype) then
+          vim.b.miniindentscope_disable = true
+        end
       end,
     })
 
