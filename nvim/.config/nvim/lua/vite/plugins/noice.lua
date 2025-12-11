@@ -1,62 +1,56 @@
--- if true then
---   return {}
--- end
---
 return {
   {
     "folke/noice.nvim",
-    event = "VeryLazy",
-    opts = {
-      -- add any options here
-      -- lsp = {
-      --   progress = {
-      --     enabled = true,
-      --   }
-      -- }
-    },
+    event = "VeryLazy", -- lazy-load after startup
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+      "rcarriga/nvim-notify", -- optional fallback for notifications
     },
-    config = function()
-      require("noice").setup({
-        lsp = {
-          progress = {
-            enabled = true,
+    opts = {
+      lsp = {
+        progress = { enabled = true },
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+          ["vim.lsp.handlers['$/progress']"] = true,
+        },
+      },
+      presets = {
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = true,
+        lsp_doc_border = true,
+      },
+      messages = {
+        enabled = true,
+        view = "mini", -- safe for short messages
+        history = 100, -- keeps last 100 messages
+      },
+      popupmenu = {
+        enabled = true, -- nicer completion menu
+        backend = "nui",
+      },
+      routes = {
+        -- example: filter out some messages you don’t want
+        { filter = { event = "msg_show", find = "%d+L, %d+B" }, opts = { skip = true } },
+      },
+    },
+    config = function(_, opts)
+      require("noice").setup(opts)
 
-          },
-          -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-          override = {
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-            ["vim.lsp.util.stylize_markdown"] = true,
-            ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-            ["vim.lsp.handlers['$/progress']"] = true,
-          },
-        },
-        -- you can enable a preset for easier configuration
-        presets = {
-          bottom_search = true,         -- use a classic bottom cmdline for search
-          command_palette = true,       -- position the cmdline and popupmenu together
-          long_message_to_split = true, -- long messages will be sent to a split
-          inc_rename = true,            -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = true,        -- add a border to hover docs and signature help
-        },
-        messages = {
-          enabled = true,
-          -- view = "notify",
-          -- timeout = 1000, -- Set the timeout in milliseconds (2000ms = 2 seconds)
-        },
-      })
+      -- Safely reset history if available
+      pcall(function()
+        if require("noice").history then
+          require("noice").history.reset()
+        end
+      end)
 
-      -- vim.keymap.set("n", "<leader>md", function() require("noice").cmd("dismiss") end, { desc = "Dismiss All messages" })
-      vim.keymap.set("n", "-", function() require("noice").cmd("dismiss") end, { desc = "Dismiss All messages" })
+      -- Keymap to dismiss all messages safely
+      vim.keymap.set("n", "-", function()
+        require("noice").cmd("dismiss")
+      end, { desc = "Dismiss all Noice messages" })
     end,
-    keys = {
-      -- { "<leader>dm", function() require("noice").cmd("dismiss") end, desc = "Dismiss All messages" },
-    },
-  }
+  },
 }

@@ -23,6 +23,9 @@ vim.opt.rtp:prepend(lazypath)
 -- })
 
 require("lazy").setup({
+  git = {
+    clone_timeout = 600, 
+  },
   spec = {
     -- add plugins
     {
